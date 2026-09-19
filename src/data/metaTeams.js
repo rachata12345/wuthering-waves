@@ -117,19 +117,19 @@
     rank: 7,
     tier: "T0",
     name: "Cyberpunk Edgerunners Cyberspace Protocol",
-    nameTh: "อันดับ 7: Lucy (ลูซี่) + Rebecca (รีเบคกา) + Shorekeeper / Mornye",
-    highlight: "ทีมคู่หู Collab Cyberpunk: Edgerunners (v3.4) เน็ตรันเนอร์เจาะเกราะทะลวง Cyberspace",
-    tags: ["อันดับ 7", "T0", "Cyberpunk Collab", "Lucy & Rebecca"],
+    nameTh: "อันดับ 7: Lucy (ลูซี่) + Rebecca (รีเบคกา) + Mornye (มอร์นี)",
+    highlight: "ทีมไซเบอร์พังก์สมบูรณ์แบบ Lucy & Rebecca ผสานพลังซัพพอร์ตของ Mornye หลบการแย่งชอร์คีปเปอร์ใน ToA",
+    tags: ["อันดับ 7", "T0", "Cyberpunk Duo", "Lucy & Rebecca BiS"],
     members: [
       { id: "lucy", name: "Lucy", role: "Main DPS", element: "Spectro", weapon: "Pistols", thumb: "assets/characters/resonator_lucy.png" },
       { id: "rebecca", name: "Rebecca", role: "Sub DPS / Buffer", element: "Electro", weapon: "Pistols", thumb: "assets/characters/resonator_rebecca.png" },
-      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
+      { id: "mornye", name: "Mornye", role: "Support / Sustain", element: "Fusion", weapon: "Broadblade", thumb: "assets/characters/resonator_mornye.png" }
     ],
-    synergy: "ตี้ตรงตามต้นฉบับและเมต้าจริง 100%! Lucy คือเน็ตรันเนอร์ (Netrunner) จาก Cyberpunk: Edgerunners ถือปืน Spectral Trigger เข้าสู่โหมด Cyberspace ใช้แต้ม RAM เจาะเกราะบอส (DEF Shred) โดยมี Rebecca มอบบัฟพิเศษ 'Edgerunner Bonds' เพิ่ม All DMG และ Heavy Attack อย่างมหาศาล!",
+    synergy: "ตี้ที่ถูกต้องและสมบูรณ์ที่สุดของ Lucy! ในการลง Tower of Adversity ต้องแบ่ง 3 ทีม ทำให้ Shorekeeper โดนจองไปกับทีมอื่น ตัวที่สามที่เป็นคำตอบที่ถูกต้องที่สุดคือ Mornye (มอร์นี) ผู้มอบบัฟต้านทานการขัดจังหวะ ฮีลฟื้นฟูทีม และบัฟ Off-Tune Level ช่วยให้คู่หูไซเบอร์พังก์ Lucy & Rebecca กราดยิงและแฮกเจาะเกราะได้อย่างต่อเนื่องไร้กังวล!",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "เปิด Stellar Realm บัฟคริติคอลและความเร็ว" },
-      { step: 2, char: "Rebecca", desc: "รีเบคกาสาดปืนกลตั้งป้อม พร้อมแจกบัฟสายใย Edgerunner Bonds -> ส่ง Outro ให้ Lucy" },
-      { step: 3, char: "Lucy", desc: "ลูซี่แฮกเจาะเข้า Cyberspace ดำดิ่งใช้ Quick-Hack สับกระสุนแสงเลเซอร์ทะลุเกราะ 100% บอสละลายทันที!" }
+      { step: 1, char: "Mornye", desc: "กางอาณาเขตสังเกตการณ์ มอบบัฟต้านทานการขัดจังหวะ ฮีลทีม และเปิดเกราะ" },
+      { step: 2, char: "Rebecca", desc: "รีเบคกาสาดกระสุนปืนกล พร้อมแจกบัฟ Edgerunner Bonds (All DMG & Heavy Attack) -> ส่งต่อให้ Lucy" },
+      { step: 3, char: "Lucy", desc: "ลูซี่เชื่อมต่อ Cyberspace ใช้ RAM ปลดปล่อย Quick-Hack ยิงกระสุน Spectral Trigger เจาะเกราะบอสจนละลาย!" }
     ]
   },
   {
