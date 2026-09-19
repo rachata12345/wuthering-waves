@@ -1,131 +1,131 @@
 ﻿export const metaTeams = [
   {
     rank: 1,
-    tier: "SSS+",
-    name: "Aemeath Solar Blaze Hypercarry",
-    nameTh: "อันดับ 1: Aemeath (เอมิธ) + Mornye (มอร์นี) + Shorekeeper",
-    highlight: "ทีมอันดับ 1 เมต้าใหม่ล่าสุด v3.x เพลิงผลาญระดับมหาจักรพรรดินี ดาเมจต่อวินาทีสูงที่สุดในยุคใหม่",
-    tags: ["อันดับ 1 เมต้าใหม่", "SSS+ Tier", "Aemeath Hypercarry", "v3.1 Meta"],
+    tier: "T0 Apex",
+    name: "Aemeath Tune Rupture Premier",
+    nameTh: "อันดับ 1: Aemeath (เอมิธ) + Lynae (ไลนี) + Mornye (มอร์นี)",
+    highlight: "ทีมที่ดีที่สุดและตรงสายที่สุดของ Aemeath (Prydwen T0 Apex) เมต้า Tune Rupture ระเบิดดาเมจเดี่ยวสูงสุด",
+    tags: ["อันดับ 1", "T0 Apex", "Aemeath BiS", "Tune Rupture"],
     members: [
       { id: "aemeath", name: "Aemeath", role: "Main DPS", element: "Fusion", weapon: "Sword", thumb: "assets/characters/resonator_aemeath.png" },
-      { id: "mornye", name: "Mornye", role: "Sub DPS", element: "Fusion", weapon: "Broadblade", thumb: "assets/characters/resonator_mornye.png" },
-      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
+      { id: "lynae", name: "Lynae", role: "Sub DPS", element: "Spectro", weapon: "Pistols", thumb: "assets/characters/resonator_lynae.png" },
+      { id: "mornye", name: "Mornye", role: "Support / Buffer", element: "Fusion", weapon: "Broadblade", thumb: "assets/characters/resonator_mornye.png" }
     ],
-    synergy: "Aemeath (เอมิธ) คือดาบเพลิงยุคใหม่ v3.1 ที่มีสเกลสกิลเพลิงทำลายล้างสูงสุด เมื่อจับคู่กับ Mornye (มอร์นี) ดาบใหญ่เพลิงที่ช่วยเปิดเกราะและส่งต่อ Outro Fusion Amplification ผสานกับโดมคริติคอลของ Shorekeeper ทำให้เพลงดาบของเอมิธผลาญเลือดบอสหมดหลอดในพริบตา",
+    synergy: "ทีม Best-in-Slot (BiS) ตรงสาย 100% ของ Aemeath ตามเมต้า Prydwen ล่าสุด โดย Aemeath สาย Tune Rupture ต้องการการแปะ Tune Effects ต่อเนื่อง ซึ่ง Lynae ยิงปืนคู่แปะ Tune ได้แม่นยำที่สุด และ Mornye มอบบัฟ Tune Amplification + ทุบเกราะ ทำให้เพลงดาบระบำเพลิงของเอมิธระเบิดดาเมจได้เต็มเพดานคำนวณ",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "เปิด Stellar Realm บัฟ CRIT Rate 12.5% และ CRIT DMG 25% พร้อมฮีล" },
-      { step: 2, char: "Mornye", desc: "ฟาดดาบใหญ่เพลิงทำลายเกราะศัตรู -> ส่ง Outro Fusion DMG Deepen ให้ Aemeath" },
-      { step: 3, char: "Aemeath", desc: "ควงดาบเพลิงเอมิธ ปลดปล่อยระบำเพลิงสุริยะ สับบอสละลายด้วยตัวเลขดาเมจหลักแสนทุกฮิต!" }
+      { step: 1, char: "Mornye", desc: "ฟาดดาบใหญ่เพลิงทำลายเกราะศัตรู -> ส่งบัฟ Tune Amplification" },
+      { step: 2, char: "Lynae", desc: "ยิงปืนคู่สาดกระสุนแสงแปะ Tune Effects เต็มพิกัด -> ส่ง Outro ให้ Aemeath" },
+      { step: 3, char: "Aemeath", desc: "เอมิธเข้าสู่โหมด Tune Rupture ควงดาบเพลิงสับบอสระเบิดด้วยตัวเลขดาเมจนิวเคลียร์!" }
     ]
   },
   {
     rank: 2,
-    tier: "SSS+",
-    name: "Hiyuki Glacio Frost Sovereign",
-    nameTh: "อันดับ 2: Hiyuki (ฮิยูกิ) + Suisui (สุ่ยสุ่ย) + Shorekeeper",
-    highlight: "ทีมนักดาบเยือกแข็งฮิยูกิ v3.3 ตัดผ่านมิติ แช่แข็งบอสถาวรพร้อมคริติคอลทะลุหลอด",
-    tags: ["อันดับ 2 เมต้าใหม่", "SSS+ Tier", "Hiyuki Frost", "v3.3 Meta"],
+    tier: "T0 Apex",
+    name: "Hiyuki Glacio Chafe Sovereign",
+    nameTh: "อันดับ 2: Hiyuki (ฮิยูกิ) + Lucilla (ลูซิลลา) + Suisui (สุ่ยสุ่ย)",
+    highlight: "ทีม Best-in-Slot ของ Hiyuki ตรงสาย Glacio Chafe แช่แข็งและฟันหยุดเวลา Time-stop ต่อเนื่อง",
+    tags: ["อันดับ 2", "T0 Apex", "Hiyuki BiS", "Glacio Chafe"],
     members: [
       { id: "hiyuki", name: "Hiyuki", role: "Main DPS", element: "Glacio", weapon: "Sword", thumb: "assets/characters/resonator_hiyuki.png" },
-      { id: "suisui", name: "Suisui", role: "Sub DPS", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_suisui.png" },
-      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
+      { id: "lucilla", name: "Lucilla", role: "Sub DPS", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_lucilla.png" },
+      { id: "suisui", name: "Suisui", role: "Support", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_suisui.png" }
     ],
-    synergy: "Hiyuki (ฮิยูกิ) ตัวทำดาเมจสายดาบน้ำแข็งยุค v3.3 ที่มีอัตราเจาะเกราะเยือกแข็งสูงสุดในเกม ได้รับการสนับสนุนจาก Suisui (สุ่ยสุ่ย v3.5) ที่สร้างสนามพลังน้ำแข็งประสานและบัฟดาเมจ Glacio เสริมด้วย Shorekeeper ทำให้การฟันของฮิยูกิติดคริติคอล 100% ตลอดการต่อสู้",
+    synergy: "ตี้ทางการที่เก่งที่สุดของฮิยูกิ Lucilla คือพาร์ทเนอร์อันดับ 1 ของ Hiyuki ที่ซินเนอร์จี้ในโหมด Glacio Chafe ได้สมบูรณ์แบบที่สุด ส่วน Suisui คือซัพพอร์ตสาย Negative Status ที่บัฟการดูดกลืนแต้ม Dedication ของฮิยูกิ ทำให้สามารถใช้ท่าชาร์จฟันหยุดเวลา (Time-stop Heavy Attack) สับบอสละลายได้แบบไม่มีใครเทียบ",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "กางม่านดวงดาว Stellar Realm ฟูลฮีลและแจกบัฟคริติคอล" },
-      { step: 2, char: "Suisui", desc: "ร่ายเวทม่านหิมะสุ่ยสุ่ย แช่แข็งลดความเร็วศัตรู -> ส่ง Outro Glacio Deepen ให้ Hiyuki" },
-      { step: 3, char: "Hiyuki", desc: "ฮิยูกิชักดาบตัดมิติเยือกแข็ง ระเบิดเกล็ดหิมะสังหาร บอสโดนแช่แข็งและสลายตัวทันที" }
+      { step: 1, char: "Suisui", desc: "กางม่านหิมะสุ่ยสุ่ย แจกบัฟ Negative Status และฟื้นฟูทีม" },
+      { step: 2, char: "Lucilla", desc: "ร่ายเวทพายุเยือกแข็งแปะ Glacio Chafe รัวๆ -> ส่ง Outro ให้ Hiyuki" },
+      { step: 3, char: "Hiyuki", desc: "ฮิยูกิ Intro เข้ามาเก็บ Dedication สแต็คเต็ม -> ฟันหยุดเวลา Time-stop ตัดมิติเยือกแข็ง ดาเมจทะลุหลอด!" }
     ]
   },
   {
     rank: 3,
-    tier: "SSS+",
-    name: "Yangyang: Xuanling Havoc Avatar",
-    nameTh: "อันดับ 3: Yangyang: Xuanling (หยางหยาง เสวียนหลิง) + Chisa + Shorekeeper",
-    highlight: "หยางหยางร่าง 5 ดาวเสวียนหลิง v3.5 พลังมืดมฤตยู ดาบเคียวมืดกวาดล้างทั้งสนามรบ",
-    tags: ["อันดับ 3 เมต้าใหม่", "SSS+ Tier", "Yangyang Xuanling", "v3.5 Meta"],
+    tier: "T0 Apex",
+    name: "Yangyang: Xuanling Havoc Bane",
+    nameTh: "อันดับ 3: Yangyang: Xuanling (หยางหยาง เสวียนหลิง) + Chisa (ชิสะ) + Suisui (สุ่ยสุ่ย)",
+    highlight: "ตี้เมต้าอันดับ 1 ของหยางหยางร่างเสวียนหลิง สาย Havoc Bane พายุทมิฬดูดกลืนทุกสิ่ง",
+    tags: ["อันดับ 3", "T0 Apex", "Xuanling BiS", "Havoc Bane"],
     members: [
       { id: "yangyang_xuanling", name: "Yangyang: Xuanling", role: "Main DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_yangyang_xuanling.png" },
       { id: "chisa", name: "Chisa", role: "Sub DPS", element: "Havoc", weapon: "Broadblade", thumb: "assets/characters/resonator_chisa.png" },
-      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
+      { id: "suisui", name: "Suisui", role: "Support", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_suisui.png" }
     ],
-    synergy: "Yangyang: Xuanling (หยางหยาง: เสวียนหลิง) ร่าง 5 ดาวธาตุมืด Havoc ยุค v3.5 ทรงพลังระดับปรากฏการณ์ ด้วยเพลงดาบพายุทมิฬ ดูดรวบและสับมอนสเตอร์ทุกตัว ผสานกับ Chisa (ชิสะ v2.8) ที่ช่วยบดขยี้เกราะด้วยดาบใหญ่ และ Shorekeeper ที่ค้ำประกันอัตราคริติคอล",
+    synergy: "นี่คือทีมพรีเมียมอันดับ 1 ของ Yangyang: Xuanling ตามไกด์ Prydwen โดยหยางหยางร่างนี้เน้นดาเมจ Havoc Bane และ Heavy Attack ซึ่ง Chisa เป็นตัวต่อสถานะ Havoc Bane ค้างไว้ได้ 100% และ Suisui บัฟความเสียหายดีบัฟสถานะ ทำให้หยางหยางเสวียนหลิงควงดาบพายุทมิฬกวาดล้างศัตรูทั้งสนามรบ",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "กาง Stellar Realm บัฟคริติคอลและความเร็ว" },
-      { step: 2, char: "Chisa", desc: "ฟาดดาบใหญ่ชิสะระเบิดเกราะมืด -> ส่ง Outro Havoc Resonance ให้หยางหยางเสวียนหลิง" },
-      { step: 3, char: "Yangyang: Xuanling", desc: "ปลดปล่อยร่างเสวียนหลิง พายุทมิฬกลืนตะวัน ฟันดาบมืดกวาดล้างทั้งเวทีดาเมจหลักล้าน!" }
+      { step: 1, char: "Suisui", desc: "ร่ายสกิลบัฟ Negative Status ทั้งทีมและเร่งเกจ Concerto" },
+      { step: 2, char: "Chisa", desc: "ฟาดดาบใหญ่แปะสถานะ Havoc Bane ค้างไว้ -> ส่ง Outro ให้หยางหยางเสวียนหลิง" },
+      { step: 3, char: "Yangyang: Xuanling", desc: "หยางหยางเสวียนหลิงเปิดพายุทมิฬ ดูดรวบมอนสเตอร์แล้วฟัน Heavy Attack ซ้ำดาเมจตัวเลขหลักล้าน!" }
     ]
   },
   {
     rank: 4,
-    tier: "SSS",
+    tier: "T0",
+    name: "Triple Sovereign Negative Status Burst",
+    nameTh: "อันดับ 4: Aemeath (เอมิธ) + Hiyuki (ฮิยูกิ) + Yangyang: Xuanling (หยางหยาง)",
+    highlight: "ทีมรวม 3 จอมทัพเทพยุคใหม่ (เอมิธ + ฮิยูกิ + หยางหยาง) ตี้ Triple DPS สลับฟันแคนเซิลคอมโบ",
+    tags: ["อันดับ 4", "T0 Dream Team", "Triple DPS", "Status Combo"],
+    members: [
+      { id: "aemeath", name: "Aemeath", role: "Main / Quickswap", element: "Fusion", weapon: "Sword", thumb: "assets/characters/resonator_aemeath.png" },
+      { id: "hiyuki", name: "Hiyuki", role: "Main / Quickswap", element: "Glacio", weapon: "Sword", thumb: "assets/characters/resonator_hiyuki.png" },
+      { id: "yangyang_xuanling", name: "Yangyang: Xuanling", role: "Main / Quickswap", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_yangyang_xuanling.png" }
+    ],
+    synergy: "ตี้ในฝันที่รวบรวม 3 ตัวละครดาบสั้นที่เก่งที่สุดในประวัติศาสตร์เกม! ทั้ง 3 ตัวเล่นอยู่ในเมต้า Negative Status / Rupture เหมือนกัน หยางหยางเสวียนหลิงเปิดพายุดูดรวบศัตรู -> ฮิยูกิสลับเข้ามาฟันแช่แข็งหยุดเวลา -> เอมิธสลับเข้ามาสับระบำเพลิงผลาญซ้ำ ซ้อนทับ 3 ธาตุ (Havoc + Glacio + Fusion) บอสไม่มีจังหวะได้ขยับแม้แต่ก้าวเดียว!",
+    rotation: [
+      { step: 1, char: "Yangyang: Xuanling", desc: "หยางหยางเสวียนหลิงเปิดอัลติพายุทมิฬ ดูดรวบศัตรูทั้งห้องมารวมที่จุดเดียว" },
+      { step: 2, char: "Hiyuki", desc: "สลับฮิยูกิเข้ามาทันที ฟันหยุดเวลา Time-stop แช่แข็งกลุ่มศัตรูทั้งหมด" },
+      { step: 3, char: "Aemeath", desc: "สลับเอมิธเข้ามาปิดฉาก สับระบำเพลิงผลาญระเบิดใส่กลุ่มศัตรูที่ถูกแช่แข็ง ดาเมจทับซ้อนตายเรียบ!" }
+    ]
+  },
+  {
+    rank: 5,
+    tier: "T0",
     name: "Qingxiao Celestial Wind Sovereign",
-    nameTh: "อันดับ 4: Qingxiao (ชิงเซียว) + Sigrika (ซิกริกา) + Shorekeeper",
-    highlight: "ทีมกระบี่สายลมเหินเวหา v3.6 เพลงกระบี่หมื่นเล่มทะลวงบอส ดาเมจ Aero ต่อเนื่องสูงสุด",
-    tags: ["อันดับ 4 เมต้าใหม่", "SSS Tier", "Qingxiao Aero", "v3.6 Meta"],
+    nameTh: "อันดับ 5: Qingxiao (ชิงเซียว) + Sigrika (ซิกริกา) + Shorekeeper",
+    highlight: "ทีมกระบี่สายลมเหินเวหา v3.6 ฝนกระบี่หมื่นเล่มทะลวงบอส ศัตรูลอยเคว้งไม่ตกพื้น",
+    tags: ["อันดับ 5", "T0", "Qingxiao BiS", "Aero Sovereign"],
     members: [
       { id: "qingxiao", name: "Qingxiao", role: "Main DPS", element: "Aero", weapon: "Sword", thumb: "assets/characters/resonator_qingxiao.png" },
       { id: "sigrika", name: "Sigrika", role: "Sub DPS", element: "Aero", weapon: "Gauntlets", thumb: "assets/characters/resonator_sigrika.png" },
       { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "Qingxiao (ชิงเซียว v3.6) ปรมาจารย์กระบี่สายลมที่สามารถควบคุมกระบี่บินนับพันเล่ม โจมตีประสานกับหมัดพายุของ Sigrika (ซิกริกา v3.2) ที่เร่งเกจ Concerto และมอบบัฟ Aero Deepen สูงสุด ทำให้ศัตรูไม่สามารถตกลงสู่พื้นได้เลย",
+    synergy: "Qingxiao ปรมาจารย์กระบี่สายลมควบคุมกระบี่บินนับหมื่นเล่ม โจมตีประสานกับหมัดพายุของ Sigrika ที่เร่งเกจ Concerto และมอบบัฟ Aero Deepen สูงสุด ผสานกับโดมคริติคอลของ Shorekeeper",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "เปิด Stellar Realm บัฟคริติคอล" },
+      { step: 1, char: "Shorekeeper", desc: "เปิด Stellar Realm บัฟคริติคอลและฮีล" },
       { step: 2, char: "Sigrika", desc: "ปล่อยหมัดสายลมซิกริกา รวบศัตรูขึ้นฟ้า -> ส่ง Outro ให้ Qingxiao" },
       { step: 3, char: "Qingxiao", desc: "ชิงเซียวเหินเวหา อัญเชิญหมื่นกระบี่สายลมสาดถล่มเป็นสายฝนลงมาบอสสลาย" }
     ]
   },
   {
-    rank: 5,
-    tier: "SSS",
+    rank: 6,
+    tier: "T0",
     name: "Jingran Solar Flare Broadblade",
-    nameTh: "อันดับ 5: Jingran (จิงหราน) + Denia (เดเนีย) + Shorekeeper",
-    highlight: "ทีมดาบใหญ่เพลิงสุริยคราส v3.6 ฟันผ่ามิติเพลิงคลื่นยักษ์ ดาเมจช็อตเดียวบอสหาย",
-    tags: ["อันดับ 5 เมต้าใหม่", "SSS Tier", "Jingran Fusion", "v3.6 Meta"],
+    nameTh: "อันดับ 6: Jingran (จิงหราน) + Denia (เดเนีย) + Mornye (มอร์นี)",
+    highlight: "ทีมดาบใหญ่เพลิงสุริยคราส v3.6 ผ่ามิติเพลิงคลื่นยักษ์ ดาเมจต่อช็อตสูงที่สุด",
+    tags: ["อันดับ 6", "T0", "Jingran BiS", "Solar Flare"],
     members: [
       { id: "jingran", name: "Jingran", role: "Main DPS", element: "Fusion", weapon: "Broadblade", thumb: "assets/characters/resonator_jingran.png" },
       { id: "denia", name: "Denia", role: "Sub DPS", element: "Fusion", weapon: "Rectifier", thumb: "assets/characters/resonator_denia.png" },
-      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
+      { id: "mornye", name: "Mornye", role: "Support", element: "Fusion", weapon: "Broadblade", thumb: "assets/characters/resonator_mornye.png" }
     ],
-    synergy: "Jingran (จิงหราน v3.6) ดาบใหญ่เพลิงพลังสุริยะ ผสานกับ Denia (เดเนีย v3.3) สื่อเวทเพลิงที่ช่วยร่ายอาณาเขตลาวาเผาผลาญเกจของศัตรูอย่างต่อเนื่อง เป็นทีมธาตุไฟสายบดขยี้ที่ดาเมจต่อช็อตสูงมาก",
+    synergy: "ทีม Mono Fusion สายดาบใหญ่ทำลายล้าง Jingran ผสานกับ Denia ที่ร่ายอาณาเขตลาวา และ Mornye ที่ช่วยเปิดเกราะศัตรู เป็นทีมธาตุไฟสายบดขยี้ที่ฟันฮิตเดียวบอสเลือดหายเกือบหมดหลอด",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "กางโดม Stellar Realm บัฟคริติคอล" },
-      { step: 2, char: "Denia", desc: "เดเนียร่ายเวทอาณาเขตเพลิงกักขังบอส -> ส่ง Outro บัฟไฟให้ Jingran" },
-      { step: 3, char: "Jingran", desc: "จิงหรานเงื้อดาบใหญ่สุริยคราส ฟาดคลื่นลาวาผ่าครึ่งสนามรบ ดาเมจทะลุหลอด" }
-    ]
-  },
-  {
-    rank: 6,
-    tier: "SS+",
-    name: "Suoming Electro God Lightning",
-    nameTh: "อันดับ 6: Suoming (สั่วหมิง) + Hsin (ซิน) + Rover-Electro",
-    highlight: "ทีมสายฟ้าไร้เทียมทานยุคใหม่ สั่วหมิงควงดาบอัสนีบาต ประสานเวทสายฟ้าซิน",
-    tags: ["อันดับ 6 เมต้าใหม่", "SS+ Tier", "Suoming Electro", "TBA Meta"],
-    members: [
-      { id: "suoming", name: "Suoming", role: "Main DPS", element: "Electro", weapon: "Sword", thumb: "assets/characters/resonator_suoming.png" },
-      { id: "hsin", name: "Hsin", role: "Sub DPS", element: "Electro", weapon: "Rectifier", thumb: "assets/characters/resonator_hsin.png" },
-      { id: "rover_electro", name: "Rover-Electro", role: "Support", element: "Electro", weapon: "Sword", thumb: "assets/characters/resonator_rover_electro.png" }
-    ],
-    synergy: "Suoming (สั่วหมิง) และ Hsin (ซิน) คู่หูสายฟ้ายุคใหม่ ฟันดาบสะสมประจุไฟฟ้าความถี่สูง ผสานกับ Rover-Electro (ผู้เดินทางไฟฟ้า v3.5) เกิดเป็น Resonance สายฟ้า 3 ตัวละครที่ช็อตศัตรูต่อเนื่องทั้งเวที",
-    rotation: [
-      { step: 1, char: "Rover-Electro", desc: "เปิดสนามแม่เหล็กไฟฟ้า บัฟประจุอัสนีบาตทั้งทีม" },
-      { step: 2, char: "Hsin", desc: "ซินร่ายอาณาเขตไฟฟ้าผ่าทำลายเกจสั่นสะเทือน -> ส่ง Outro ให้สั่วหมิง" },
-      { step: 3, char: "Suoming", desc: "สั่วหมิงพุ่งฟันดาบอัสนีบาตไร้เงา สายฟ้าฟาดผ่าบอสต่อเนื่องนับสิบครั้ง" }
+      { step: 1, char: "Mornye", desc: "ทุบเปิดเกราะและมอบบัฟธาตุไฟ" },
+      { step: 2, char: "Denia", desc: "ร่ายอาณาเขตเพลิงลาวา -> ส่ง Outro ให้ Jingran" },
+      { step: 3, char: "Jingran", desc: "จิงหรานฟาดดาบใหญ่สุริยคราส ผ่าครึ่งสนามรบด้วยคลื่นเพลิงยักษ์" }
     ]
   },
   {
     rank: 7,
-    tier: "SS+",
+    tier: "T0.5",
     name: "Lucy Divine Spectro Pistols",
-    nameTh: "อันดับ 7: Lucy (ลูซี่) + Lynae (ไลนี) + Luuk Herssen",
+    nameTh: "อันดับ 7: Lucy (ลูซี่) + Lynae (ไลนี) + Luuk Herssen (ลุค)",
     highlight: "ทีมปืนคู่และสนับมือแสงศักดิ์สิทธิ์ ยิงกราดกระสุนแสงรัวทะลุเกราะทุกประเภท",
-    tags: ["อันดับ 7 เมต้าใหม่", "SS+ Tier", "Lucy Pistols", "v3.4 Meta"],
+    tags: ["อันดับ 7", "T0.5", "Lucy BiS", "Gun-Kata Spectro"],
     members: [
       { id: "lucy", name: "Lucy", role: "Main DPS", element: "Spectro", weapon: "Pistols", thumb: "assets/characters/resonator_lucy.png" },
       { id: "lynae", name: "Lynae", role: "Sub DPS", element: "Spectro", weapon: "Pistols", thumb: "assets/characters/resonator_lynae.png" },
       { id: "luuk_herssen", name: "Luuk Herssen", role: "Support", element: "Spectro", weapon: "Gauntlets", thumb: "assets/characters/resonator_luuk_herssen.png" }
     ],
-    synergy: "Lucy (ลูซี่ v3.4) ปืนคู่ธาตุแสงผสานกับ Lynae (ไลนี v3.0) สาดกระสุนแสงประสานแบบ Gun-Kata โดยมี Luuk Herssen (ลุค เฮอร์เซน v3.1) คอยชกหยุดจังหวะและกางเกราะป้องกัน เป็นทีมแสงที่ยิงต่อเนื่องและคล่องตัวสูง",
+    synergy: "Lucy ปืนคู่ธาตุแสงผสานกับ Lynae สาดกระสุนแสงแบบ Gun-Kata ต่อเนื่อง โดยมี Luuk Herssen คอยชกหยุดจังหวะและกางเกราะป้องกัน คล่องตัวสูงและยิงเจาะเกราะได้อย่างแม่นยำ",
     rotation: [
       { step: 1, char: "Luuk Herssen", desc: "ชกคลื่นสุริยะกางบาเรียป้องกันและแจกบัฟ Spectro" },
       { step: 2, char: "Lynae", desc: "ไลนีกราดยิงกระสุนแสงหยุดจังหวะบอส -> ส่ง Outro ให้ Lucy" },
@@ -134,36 +134,17 @@
   },
   {
     rank: 8,
-    tier: "SS+",
-    name: "Lucilla Absolute Glacio Storm",
-    nameTh: "อันดับ 8: Lucilla (ลูซิลลา) + Hiyuki (ฮิยูกิ) + Shorekeeper",
-    highlight: "ทีมพายุเยือกแข็งลูซิลลา & ฮิยูกิ ม่านหิมะศูนย์สัมบูรณ์ ปลอดภัยและหนาแน่น",
-    tags: ["อันดับ 8 เมต้าใหม่", "SS+ Tier", "Glacio Frost", "v3.4 Meta"],
-    members: [
-      { id: "lucilla", name: "Lucilla", role: "Main DPS", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_lucilla.png" },
-      { id: "hiyuki", name: "Hiyuki", role: "Sub DPS", element: "Glacio", weapon: "Sword", thumb: "assets/characters/resonator_hiyuki.png" },
-      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
-    ],
-    synergy: "Lucilla (ลูซิลลา v3.4) กางอาณาเขตพายุหิมะน้ำแข็งเวทมนตร์วงกว้าง โดยมี Hiyuki (ฮิยูกิ v3.3) ช่วยชักดาบตัดมิติน้ำแข็งซ้ำเติมจุดอ่อน ทำให้เกิดการแช่แข็งแบบไม่สิ้นสุด",
-    rotation: [
-      { step: 1, char: "Shorekeeper", desc: "เปิด Stellar Realm บัฟคริติคอล" },
-      { step: 2, char: "Hiyuki", desc: "ฮิยูกิฟันดาบน้ำแข็งแช่แข็งศัตรู -> ส่ง Outro ให้ Lucilla" },
-      { step: 3, char: "Lucilla", desc: "ลูซิลลาร่ายพายุหิมะกลืนกินสนามรบ ระเบิดผลึกน้ำแข็งสร้างดาเมจกระจาย" }
-    ]
-  },
-  {
-    rank: 9,
-    tier: "SS",
+    tier: "T0.5",
     name: "Rebecca Cybernetic Gunslinger",
-    nameTh: "อันดับ 9: Rebecca (รีเบคกา) + Buling (ปู้หลิง) + Shorekeeper",
+    nameTh: "อันดับ 8: Rebecca (รีเบคกา) + Buling (ปู้หลิง) + Shorekeeper",
     highlight: "ทีมปืนคู่สายฟ้าความเร็วสูง รีเบคกาสาดกระสุนอัสนีบาต ปู้หลิงช่วยชาร์จประจุ",
-    tags: ["อันดับ 9 เมต้าใหม่", "SS Tier", "Rebecca Electro", "v3.4 Meta"],
+    tags: ["อันดับ 8", "T0.5", "Rebecca BiS", "Electro Pistols"],
     members: [
       { id: "rebecca", name: "Rebecca", role: "Main DPS", element: "Electro", weapon: "Pistols", thumb: "assets/characters/resonator_rebecca.png" },
       { id: "buling", name: "Buling", role: "Sub DPS", element: "Electro", weapon: "Rectifier", thumb: "assets/characters/resonator_buling.png" },
       { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "Rebecca (รีเบคกา v3.4) ปืนคู่สายฟ้าสุดเท่ คล่องตัวสูง เคลื่อนที่ยิงรวดเร็ว Buling (ปู้หลิง v2.8) ร่ายกระแสไฟฟ้าบัฟพลังงานและรีชาร์จสกิล ทำให้รีเบคกาสามารถกดสกิลยิงกระสุนอัสนีบาตได้ต่อเนื่องไร้สะดุด",
+    synergy: "Rebecca ปืนคู่สายฟ้าสุดเท่ คล่องตัวสูง เคลื่อนที่ยิงรวดเร็ว Buling ช่วยชาร์จประจุและรีชาร์จสกิล ทำให้รีเบคกาสามารถสไลด์ยิงกระสุนอัสนีบาตได้ต่อเนื่องไร้สะดุด",
     rotation: [
       { step: 1, char: "Shorekeeper", desc: "กางม่าน Stellar Realm บัฟคริติคอล" },
       { step: 2, char: "Buling", desc: "ปู้หลิงปล่อยกระแสไฟฟ้าชาร์จประจุ -> ส่ง Outro ให้ Rebecca" },
@@ -171,22 +152,41 @@
     ]
   },
   {
+    rank: 9,
+    tier: "T0.5",
+    name: "Suoming Electro God Lightning",
+    nameTh: "อันดับ 9: Suoming (สั่วหมิง) + Hsin (ซิน) + Rover-Electro",
+    highlight: "ทีมสายฟ้าไร้เทียมทานยุคใหม่ สั่วหมิงควงดาบอัสนีบาต ประสานเวทสายฟ้าซิน",
+    tags: ["อันดับ 9", "T0.5", "Suoming BiS", "Electro Storm"],
+    members: [
+      { id: "suoming", name: "Suoming", role: "Main DPS", element: "Electro", weapon: "Sword", thumb: "assets/characters/resonator_suoming.png" },
+      { id: "hsin", name: "Hsin", role: "Sub DPS", element: "Electro", weapon: "Rectifier", thumb: "assets/characters/resonator_hsin.png" },
+      { id: "rover_electro", name: "Rover-Electro", role: "Support", element: "Electro", weapon: "Sword", thumb: "assets/characters/resonator_rover_electro.png" }
+    ],
+    synergy: "Suoming และ Hsin คู่หูสายฟ้ายุคใหม่ ฟันดาบสะสมประจุไฟฟ้าความถี่สูง ผสานกับ Rover-Electro เกิดเป็น Resonance สายฟ้า 3 ตัวละครที่ช็อตศัตรูต่อเนื่องทั้งเวที",
+    rotation: [
+      { step: 1, char: "Rover-Electro", desc: "เปิดสนามแม่เหล็กไฟฟ้า บัฟประจุอัสนีบาตทั้งทีม" },
+      { step: 2, char: "Hsin", desc: "ซินร่ายอาณาเขตไฟฟ้าผ่าทำลายเกจสั่นสะเทือน -> ส่ง Outro ให้สั่วหมิง" },
+      { step: 3, char: "Suoming", desc: "สั่วหมิงพุ่งฟันดาบอัสนีบาตไร้เงา สายฟ้าฟาดผ่าบอสต่อเนื่องนับสิบครั้ง" }
+    ]
+  },
+  {
     rank: 10,
-    tier: "SS",
+    tier: "T0.5",
     name: "Camellya Blood Vine Queen",
-    nameTh: "อันดับ 10: Camellya (คาเมลเลีย) + Yangyang: Xuanling + Shorekeeper",
-    highlight: "ทีมดูโอ้มหาอำนาจธาตุมืด Havoc คาเมลเลีย & หยางหยางเสวียนหลิง สับสะบั้นทุกสิ่ง",
-    tags: ["อันดับ 10 เมต้าใหม่", "SS Tier", "Havoc Dual Power", "v3.5 Meta"],
+    nameTh: "อันดับ 10: Camellya (คาเมลเลีย) + Sanhua (ซานหัว) + Shorekeeper",
+    highlight: "ตำนานราชินีดอกไม้โลหิต สปีดรัน Tower of Adversity ตลอดกาล",
+    tags: ["อันดับ 10", "T0.5", "Camellya BiS", "ToA Legend"],
     members: [
       { id: "camellya", name: "Camellya", role: "Main DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_camellya.png" },
-      { id: "yangyang_xuanling", name: "Yangyang: Xuanling", role: "Sub DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_yangyang_xuanling.png" },
+      { id: "sanhua", name: "Sanhua", role: "Sub DPS", element: "Glacio", weapon: "Sword", thumb: "assets/characters/resonator_sanhua.png" },
       { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "การจับคู่ระหว่างสองสุดยอดตัวละครธาตุมืด Yangyang: Xuanling (หยางหยาง เสวียนหลิง v3.5) ช่วยรวบศัตรูและแจกบัฟ Havoc จากนั้น Camellya เข้ามาหมุนสับเถาวัลย์ Blossom Swirl กวาดล้างทั้งห้อง เป็นทีมธาตุมืดที่แรงและเล่นมันส์ที่สุด",
+    synergy: "ทีมคลาสสิกไร้กาลเวลา Sanhua มอบ Basic Attack +38% ใน 3 วินาที ให้ Camellya สับเถาวัลย์ Blossom Swirl กวาดล้างห้องบอสได้อย่างรวดเร็ว",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "กางโดม Stellar Realm บัฟคริติคอล" },
-      { step: 2, char: "Yangyang: Xuanling", desc: "หยางหยางเสวียนหลิงฟันพายุดูดมอนสเตอร์ -> ส่ง Outro ให้ Camellya" },
-      { step: 3, char: "Camellya", desc: "คาเมลเลียเข้า Blossom Mode หมุนสับเถาวัลย์สีเลือดกวาดล้างศัตรูทั้งห้อง" }
+      { step: 1, char: "Shorekeeper", desc: "กาง Stellar Realm บัฟคริติคอลและฮีล" },
+      { step: 2, char: "Sanhua", desc: "สับเกจน้ำแข็งระเบิด 3 วิ -> ส่ง Outro Basic Attack ให้ Camellya" },
+      { step: 3, char: "Camellya", desc: "คาเมลเลียเข้า Blossom Mode หมุนสับเถาวัลย์กวาดล้างทั้งห้อง" }
     ]
   }
 ];
