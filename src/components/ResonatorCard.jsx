@@ -31,8 +31,17 @@ export default function ResonatorCard({ char, elementConfig, onClick, onPlayTone
           loading="lazy"
           decoding="async"
           onError={(e) => {
-            // Fallback gracefully if specific file is missing
-            e.target.style.opacity = '0.7';
+            if (!e.target.dataset.fallbackTried) {
+              e.target.dataset.fallbackTried = '1';
+              // Try leading slash if relative failed
+              const cleanPath = char.thumb.startsWith('/') ? char.thumb.substring(1) : char.thumb;
+              e.target.src = '/' + cleanPath;
+            } else {
+              e.target.style.display = 'none';
+              if (e.target.parentElement) {
+                e.target.parentElement.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:1.8rem;color:${conf.color};font-weight:bold;background:rgba(255,255,255,0.05);">${char.name.charAt(0)}</div>`;
+              }
+            }
           }}
         />
       </div>

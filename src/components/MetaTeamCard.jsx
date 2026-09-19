@@ -56,7 +56,13 @@ export default function MetaTeamCard({ team, onPlayTone }) {
                 loading="lazy"
                 decoding="async"
                 onError={(e) => {
-                  e.target.style.opacity = '0.7';
+                  if (!e.target.dataset.fallbackTried) {
+                    e.target.dataset.fallbackTried = '1';
+                    const cleanPath = member.thumb.startsWith('/') ? member.thumb.substring(1) : member.thumb;
+                    e.target.src = '/' + cleanPath;
+                  } else {
+                    e.target.style.display = 'none';
+                  }
                 }}
               />
               <span className="meta-member-role">{member.role}</span>

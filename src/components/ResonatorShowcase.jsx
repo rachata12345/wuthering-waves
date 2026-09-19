@@ -10,7 +10,7 @@ const featuredCharacters = [
     role: "Burst Hypercarry (Tier EX)",
     rarity: 5,
     thumb: "assets/characters/resonator_jinhsi.png",
-    splash: "assets/characters/resonator_jinhsi.png",
+    splash: "assets/characters/jinhsi_splash.png",
     desc: "ผู้ว่าการแห่งเมือง Jinzhou ผู้เชื่อมต่อกับเทพมังกร Jue ปลดปล่อยลำแสงสุริยะ Illuminous Dragon Breath รุนแรงที่สุดในเกม ด้วยพลังสะสมเกจมังกร Incandescence 50 แต้มจากการโจมตีประสานต่างธาตุ",
     skills: [
       { name: "Trailing Lights", type: "Basic Attack", desc: "ฟันดาบใหญ่ 4 จังหวะ สร้างความเสียหาย Spectro พร้อมสะสมเกจ" },
@@ -29,7 +29,7 @@ const featuredCharacters = [
     role: "Dual Quickswap / Main DPS (Tier S+)",
     rarity: 5,
     thumb: "assets/characters/resonator_changli.png",
-    splash: "assets/characters/resonator_changli.png",
+    splash: "assets/characters/changli_splash.png",
     desc: "ที่ปรึกษาคนสนิทของจินซี ใช้เพลงดาบเพลิงวิหคเฟิ่งหวง สลับฟันกลางอากาศอย่างงดงาม พร้อมระบบ Quickswap ไร้รอยต่อ มอบบัฟ Fusion 20% และ Liberation 25% ให้เพื่อนร่วมทีม",
     skills: [
       { name: "Tripartite Flames", type: "Basic Attack", desc: "กระบวนท่าดาบเพลิง 4 จังหวะ รวดเร็วและพริ้วไหว" },
@@ -48,7 +48,7 @@ const featuredCharacters = [
     role: "Basic Attack Hypercarry (Tier EX)",
     rarity: 5,
     thumb: "assets/characters/resonator_camellya.png",
-    splash: "assets/characters/resonator_camellya.png",
+    splash: "assets/characters/camellya_splash.png",
     desc: "สมาชิกองค์กร Black Shores ผู้มีสายเลือดเถาวัลย์ปีศาจ ดึงดูดศัตรูเข้าสู่ตาข่ายสีเลือดและหมุนตัวสับเถาวัลย์ Blossom Swirl กวาดล้าง Tower of Adversity ได้รวดเร็วที่สุดในเกม",
     skills: [
       { name: "Crimson Weave", type: "Basic Attack", desc: "ควงดาบและเถาวัลย์ฟันต่อเนื่องนับเป็น Basic Attack ดาเมจสูง" },
@@ -67,7 +67,7 @@ const featuredCharacters = [
     role: "Universal Support & Healer (Tier EX)",
     rarity: 5,
     thumb: "assets/characters/resonator_shorekeeper.png",
-    splash: "assets/characters/resonator_shorekeeper.png",
+    splash: "assets/characters/shorekeeper_splash.png",
     desc: "สิ่งมีชีวิตโบราณผู้พิทักษ์มิติ Black Shores มอบโดม Stellar Realm ที่มอบบัฟ CRIT Rate 12.5% และ CRIT DMG 25% ให้เพื่อนร่วมทีมทุกคน พร้อมการฮีลและการป้องกันการตาย",
     skills: [
       { name: "Origin Frequency", type: "Basic Attack", desc: "ยิงคลื่นผีเสื้อแสงระยิบระยับฟื้นฟูพลังงาน" },
@@ -86,7 +86,7 @@ const featuredCharacters = [
     role: "Heavy Attack Hypercarry (Tier S+)",
     rarity: 5,
     thumb: "assets/characters/resonator_jiyan.png",
-    splash: "assets/characters/resonator_jiyan.png",
+    splash: "assets/characters/jiyan_splash.png",
     desc: "แม่ทัพใหญ่แห่ง Midnight Rangers ผู้ใช้เพลงทวนมังกรสายลม ควงหอกมังกร Qingloong ดูดรวบศัตรูทั้งห้องและฟันกระหน่ำด้วย Heavy Attack ต่อเนื่อง มอนสเตอร์ไม่สามารถขยับตัวได้",
     skills: [
       { name: "Lone Pine", type: "Basic Attack", desc: "เพลงหอกโบราณ 5 กระบวนท่าทรงพลัง" },
@@ -105,7 +105,7 @@ const featuredCharacters = [
     role: "Off-field Sub DPS / Buffer (Tier S+)",
     rarity: 5,
     thumb: "assets/characters/resonator_yinlin.png",
-    splash: "assets/characters/resonator_yinlin.png",
+    splash: "assets/characters/yinlin_splash.png",
     desc: "อดีตเจ้าหน้าที่สืบสวนคดีพิเศษ ใช้หุ่นเชิด Zapstring ฟาดฟันสายฟ้ากักขังศัตรู มอบ Outro Buff สายฟ้า Electro Deepen +20% และ Resonance Liberation +25% ให้ตัวละครถัดไป",
     skills: [
       { name: "Zapstring Dance", type: "Basic Attack", desc: "ควบคุมหุ่นเชิดยิงกระแสไฟฟ้าใส่ศัตรูจากระยะไกล" },
@@ -124,7 +124,7 @@ const featuredCharacters = [
     role: "Versatile Main DPS (Tier S)",
     rarity: 5,
     thumb: "assets/characters/rover_thumb.png",
-    splash: "assets/characters/rover_thumb.png",
+    splash: "assets/characters/rover_splash.png",
     desc: "ผู้เดินทางไร้ความทรงจำ สามารถสลับธาตุระหว่าง Spectro (หยุดเวลา & บัฟ) และ Havoc (ควงเคียวมืดระเบิดพลัง Dark Surge ดาเมจหลักแสน) เป็นตัวฟรีระดับ S Tier ของเกม",
     skills: [
       { name: "Vibration Slash", type: "Basic Attack", desc: "ฟันคลื่นดาบ 4 จังหวะประสานพลัง Tacet Disc" },
@@ -171,7 +171,13 @@ export default function ResonatorShowcase({ onPlayTone }) {
                 src={char.thumb}
                 alt={char.name}
                 className="char-tab-thumb"
-                onError={(e) => { e.target.style.opacity = '0.7'; }}
+                onError={(e) => {
+                  if (!e.target.dataset.fallbackTried) {
+                    e.target.dataset.fallbackTried = '1';
+                    const clean = char.thumb.startsWith('/') ? char.thumb.substring(1) : char.thumb;
+                    e.target.src = '/' + clean;
+                  }
+                }}
               />
               <span className="char-tab-label">{char.name}</span>
             </button>
@@ -232,7 +238,13 @@ export default function ResonatorShowcase({ onPlayTone }) {
                 src={activeChar.splash}
                 alt={activeChar.name}
                 className="showcase-portrait-img"
-                onError={(e) => { e.target.style.opacity = '0.7'; }}
+                onError={(e) => {
+                  if (!e.target.dataset.fallbackTried) {
+                    e.target.dataset.fallbackTried = '1';
+                    const clean = activeChar.splash.startsWith('/') ? activeChar.splash.substring(1) : activeChar.splash;
+                    e.target.src = '/' + clean;
+                  }
+                }}
               />
             </div>
 
