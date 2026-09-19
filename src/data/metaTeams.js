@@ -1,192 +1,192 @@
-export const metaTeams = [
+﻿export const metaTeams = [
   {
     rank: 1,
     tier: "EX",
-    name: "Celestial Dragon & Frost Brush Burst",
-    nameTh: "ทีมมังกรสุริยะ & พู่กันน้ำแข็งสังหารเทพ",
-    highlight: "ดาเมจระเบิดมังกรสูงสุดในเกม 400,000+ ดอกเดียวบอสละลาย",
-    tags: ["EX Tier", "Burst DMG", "Dragon Gauge", "Single Target God"],
-    members: [
-      { id: "jinhsi", name: "Jinhsi", role: "Main DPS", element: "Spectro", weapon: "Broadblade", thumb: "assets/characters/resonator_jinhsi.png" },
-      { id: "zhezhi", name: "Zhezhi", role: "Sub DPS", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_zhezhi.png" },
-      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
-    ],
-    synergy: "Jinhsi ต้องการการโจมตีประสานต่างธาตุเพื่อสะสมเกจมังกร 50 แต้ม Zhezhi โจมตีประสานน้ำแข็งรัวสุด + Outro บัฟสกิล 25% เสริมด้วย Shorekeeper บัฟ CRIT Rate 12.5% และ CRIT DMG 25% ดอกเดียวบอสละลาย",
-    rotation: [
-      { step: 1, char: "Shorekeeper", desc: "เปิด Intro -> กาง Stellar Realm ฟูลฮีล -> ใช้ Echo Fallacy of No Return -> ส่ง Outro Buff ให้ Zhezhi" },
-      { step: 2, char: "Zhezhi", desc: "ฟาดพู่กันปล่อยนกกระเรียนน้ำแข็งโจมตีประสาน -> กางม่านหมึกอัลติ -> ส่ง Outro Skill DMG +25% ให้ Jinhsi" },
-      { step: 3, char: "Jinhsi", desc: "รับบัฟเต็มพิกัด -> สกิล E พุ่งบินขึ้นฟ้า -> สาดเลเซอร์ Illuminous Dragon Breath ระเบิดเกจ 50 หลอด ดาเมจ 400,000+!" }
-    ]
-  },
-  {
-    rank: 2,
-    tier: "EX",
     name: "Crimson Blossom Havoc Hypercarry",
-    nameTh: "ทีมจักรพรรดินีดอกไม้เลือด คาเมลเลียสับแหลก",
-    highlight: "จักรพรรดินีแห่ง Tower of Adversity เคลียร์ห้องบอสไวที่สุดในเกม",
-    tags: ["EX Tier", "Basic Attack Hypercarry", "Fastest Concerto", "ToA Queen"],
+    nameTh: "อันดับ 1: Camellya + Sanhua + Shorekeeper (ราชินีดอกไม้เลือด)",
+    highlight: "ทีมอันดับ 1 เคลียร์ Tower of Adversity เร็วและแรงที่สุดในเมต้าปัจจุบัน ดาเมจทะลุหลอด",
+    tags: ["อันดับ 1 เมต้า", "EX Tier", "Basic ATK Hypercarry", "ToA Queen"],
     members: [
       { id: "camellya", name: "Camellya", role: "Main DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_camellya.png" },
       { id: "sanhua", name: "Sanhua", role: "Sub DPS", element: "Glacio", weapon: "Sword", thumb: "assets/characters/resonator_sanhua.png" },
       { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "ท่าเถาวัลย์ Blossom Swirl ของ Camellya นับเป็น Basic Attack ทั้งหมด ซึ่ง Sanhua บัฟ Basic Attack ถึง 38% แถมทำ Concerto ไวสุดใน 3 วินาที เคลียร์ห้องบอสไวที่สุดในแพตช์ปัจจุบัน",
+    synergy: "Camellya เป็นตัวทำดาเมจที่ทุกการโจมตีในโหมด Blossom Swirl นับเป็น Basic Attack ทั้งหมด ซึ่ง Sanhua มอบ Outro Buff Basic Attack สูงถึง 38% พร้อมสะสม Concerto ไวใน 3 วินาที เสริมด้วย Shorekeeper กางโดม Stellar Realm บัฟ CRIT Rate 12.5% และ CRIT DMG 25% กลายเป็นทีมที่สปีดรันบอสเร็วที่สุดในเกม",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "เปิดโดม Stellar Realm บัฟคริติคอลและฮีล -> ส่งต่อให้ Sanhua" },
-      { step: 2, char: "Sanhua", desc: "กดยกพื้นน้ำแข็ง -> ชาร์จเกจเสี้ยววินาทีระเบิดแท่งน้ำแข็ง -> ส่ง Outro บัฟ Basic Attack +38% ให้ Camellya" },
-      { step: 3, char: "Camellya", desc: "เข้าสู่สถานะ Crimson Blossom -> หมุนฟันเถาวัลย์ระห่ำกลางอากาศ -> ปล่อยอัลติระเบิดดอกไม้สีเลือดบอสสลาย" }
+      { step: 1, char: "Shorekeeper", desc: "Intro -> กาง Stellar Realm ฟูลฮีลและบัฟคริติคอล -> กด Echo Fallacy -> ส่ง Outro ให้ Sanhua" },
+      { step: 2, char: "Sanhua", desc: "สกิล E ยกแท่งน้ำแข็ง -> ชาร์จเกจเสี้ยววินาทีระเบิดน้ำแข็ง -> ส่ง Outro Basic Attack +38% ให้ Camellya" },
+      { step: 3, char: "Camellya", desc: "รับบัฟเต็มสูบ -> สกิล E เข้า Blossom Mode -> หมุนสับเถาวัลย์กลางเวหา -> ปิดด้วยอัลติระเบิดดอกไม้สีเลือด 300,000+" }
+    ]
+  },
+  {
+    rank: 2,
+    tier: "EX",
+    name: "Celestial Dragon Nuclear Burst",
+    nameTh: "อันดับ 2: Jinhsi + Zhezhi + Shorekeeper (มังกรสุริยะนิวเคลียร์)",
+    highlight: "ดาเมจต่อช็อต (Single-Hit Burst) รุนแรงที่สุดในเกม ลำแสงมังกร 400,000 - 600,000+ ดอกเดียวบอสละลาย",
+    tags: ["อันดับ 2 เมต้า", "EX Tier", "Nuclear Burst", "Single Target God"],
+    members: [
+      { id: "jinhsi", name: "Jinhsi", role: "Main DPS", element: "Spectro", weapon: "Broadblade", thumb: "assets/characters/resonator_jinhsi.png" },
+      { id: "zhezhi", name: "Zhezhi", role: "Sub DPS", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_zhezhi.png" },
+      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
+    ],
+    synergy: "Jinhsi ต้องเก็บเกจมังกร Incandescence 50 แต้มจากการโจมตีประสานต่างธาตุ ซึ่ง Zhezhi โจมตีประสานน้ำแข็งรวดเร็วและต่อเนื่องที่สุดในเกม พร้อมส่ง Outro บัฟ Resonance Skill DMG +25% ผสานกับ Shorekeeper ที่ช่วยค้ำประกันให้อัตราคริติคอลของลำแสงมังกรติด 100% เสมอ",
+    rotation: [
+      { step: 1, char: "Shorekeeper", desc: "กาง Stellar Realm สเตจ 1-2 แจกบัฟ CRIT และฮีลฟื้นฟู -> ส่งไม้ต่อให้ Zhezhi" },
+      { step: 2, char: "Zhezhi", desc: "ตวัดพู่กันปล่อยนกกระเรียนน้ำแข็งโจมตีประสาน -> กางม่านหมึกอัลติ -> ส่ง Outro Skill DMG +25% ให้ Jinhsi" },
+      { step: 3, char: "Jinhsi", desc: "เกจมังกรเต็ม 50 หลอด -> สกิลพุ่งทะยานฟ้า -> ยิงเลเซอร์ Illuminous Dragon Breath ทะลวงบอส ดาเมจนิวเคลียร์หลักแสน!" }
     ]
   },
   {
     rank: 3,
-    tier: "S+",
-    name: "Blazing Phoenix Dual Quickswap",
-    nameTh: "ทีมเพลิงคู่วิหคเพลิง สลับฟันไร้คูลดาวน์",
-    highlight: "ดาเมจต่อวินาที (DPS) พุ่งทะลุเพดานด้วยเมคานิกส์ Quickswap ไร้รอยต่อ",
-    tags: ["S+ Tier", "Dual Quickswap", "Fusion Resonance", "Zero Downtime"],
+    tier: "EX",
+    name: "Absolute Zero Glacio Sniper",
+    nameTh: "อันดับ 3: Carlotta + Zhezhi + Shorekeeper (สไนเปอร์เยือกแข็งศูนย์สัมบูรณ์)",
+    highlight: "ดาเมจเจาะเกราะน้ำแข็งระยะไกล ยิงปลอดภัย คล่องตัวสูง และระเบิดบอสได้ในพริบตา",
+    tags: ["อันดับ 3 เมต้า", "EX Tier", "Glacio Sniper", "V2.0 Meta"],
     members: [
-      { id: "changli", name: "Changli", role: "Main / Quickswap", element: "Fusion", weapon: "Sword", thumb: "assets/characters/resonator_changli.png" },
-      { id: "encore", name: "Encore", role: "Main / Quickswap", element: "Fusion", weapon: "Rectifier", thumb: "assets/characters/resonator_encore.png" },
+      { id: "carlotta", name: "Carlotta", role: "Main DPS", element: "Glacio", weapon: "Pistols", thumb: "assets/characters/resonator_carlotta.png" },
+      { id: "zhezhi", name: "Zhezhi", role: "Sub DPS", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_zhezhi.png" },
       { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "Outro ของ Changli บัฟ Fusion 20% + Liberation 25% ให้ Encore เต็ม 100% กดยกเลิกอนิเมชันของกันและกัน สลับตัวรัวสกิลต่อเนื่อง ดาเมจต่อวินาที (DPS) พุ่งทะลุเพดาน",
+    synergy: "Carlotta ตัวละครยุค 2.0 สไนเปอร์น้ำแข็งที่มีตัวคูณดาเมจต่อวินาทีสูงมาก รับบัฟ Glacio Deepen +20% และ Skill Deepen +25% ตรงสายจาก Zhezhi 100% พร้อมโดมคริติคอลของ Shorekeeper ทำให้ทุกนัดที่ลั่นไกกลายเป็นคริติคอลดาเมจเจาะเกราะบอสขาดกระจุย",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "บัฟคริติคอลและฮีลทั้งทีมด้วย Stellar Realm" },
-      { step: 2, char: "Changli", desc: "เก็บเกจขนนก True Sight -> ฟันนกฟีนิกซ์เปลวเพลิง -> ส่ง Outro บัฟ Fusion + Liberation ให้ Encore" },
-      { step: 3, char: "Encore", desc: "แปลงร่าง Cosmos Rave ทุบรัวๆ -> สลับกลับ Changli ทันทีเพื่อแคนเซิลท่า ดาเมจไม่ขาดตอนแม้แต่วินาทีเดียว" }
+      { step: 1, char: "Shorekeeper", desc: "เปิด Stellar Realm บัฟคริติคอลและฮีลทั้งทีม" },
+      { step: 2, char: "Zhezhi", desc: "สาดหมึกพู่กันน้ำแข็งเคลือบสนามรบ -> ส่ง Outro บัฟธาตุน้ำแข็งให้ Carlotta" },
+      { step: 3, char: "Carlotta", desc: "ล็อคเป้าชาร์จสไนเปอร์เยือกแข็ง ยิงทะลวงจุดอ่อนระยะปลอดภัย ตัวเลขเด้งรัวต่อเนื่อง" }
     ]
   },
   {
     rank: 4,
     tier: "S+",
-    name: "Qingloong Wind Dragon Tempest",
-    nameTh: "ทีมมังกรพายุเขียว กวาดล้างทั้งเวที",
-    highlight: "กวาดล้างมอนสเตอร์เป็นกลุ่มและบอสตัวใหญ่ด้วยพลัง Heavy Attack",
-    tags: ["S+ Tier", "Heavy Attack God", "AoE Crowd Control", "Dragon Lance"],
+    name: "Blazing Phoenix Dual Quickswap",
+    nameTh: "อันดับ 4: Changli + Encore + Shorekeeper (เพลิงคู่วิหคเพลิง สลับไร้คูลดาวน์)",
+    highlight: "ราชาแห่งระบบ Dual Quickswap สลับตัวฟันแคนเซิลอนิเมชัน DPS ต่อเนื่องสูงสุดในเกม",
+    tags: ["อันดับ 4 เมต้า", "S+ Tier", "Dual Quickswap", "Fusion King"],
     members: [
-      { id: "jiyan", name: "Jiyan", role: "Main DPS", element: "Aero", weapon: "Broadblade", thumb: "assets/characters/resonator_jiyan.png" },
-      { id: "mortefi", name: "Mortefi", role: "Sub DPS", element: "Fusion", weapon: "Pistols", thumb: "assets/characters/resonator_mortefi.png" },
-      { id: "verina", name: "Verina", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_verina.png" }
+      { id: "changli", name: "Changli", role: "Main / Quickswap", element: "Fusion", weapon: "Sword", thumb: "assets/characters/resonator_changli.png" },
+      { id: "encore", name: "Encore", role: "Main / Quickswap", element: "Fusion", weapon: "Rectifier", thumb: "assets/characters/resonator_encore.png" },
+      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "ท่าไม้ตายมังกรเขียวของ Jiyan นับเป็น Heavy Attack 100% ซึ่ง Mortefi มอบบัฟ Heavy Attack สูงถึง 38% สูงที่สุดในเกม มอนสเตอร์ทั้งห้องโดนลมดูดและสับแหลก",
+    synergy: "Changli มอบ Outro Fusion Deepen 20% + Liberation 25% ซึ่งตรงกับท่าไม้ตาย Cosmos Rave ของ Encore ทุกประการ ทั้งคู่สามารถสลับตัวออกมาระหว่างที่อนิเมชันกำลังแสดงผลได้ ทำให้ดาเมจในสนามรบไม่ขาดช่วงแม้แต่วินาทีเดียว",
     rotation: [
-      { step: 1, char: "Verina", desc: "สกิลกระโดดแจกบัฟ ATK 20% + All-DMG Deepen 15% พร้อมบัฟเกราะกุหลาบ" },
-      { step: 2, char: "Mortefi", desc: "สกิลเป่ามังกรเพลิงอัลติประสาน -> ส่ง Outro Heavy Attack Deepen +38% ให้ Jiyan" },
-      { step: 3, char: "Jiyan", desc: "ปลดปล่อย Qingloong Mode พุ่งควงหอกมังกรกระหน่ำดูดมอนสเตอร์ทั้งเวที ดาเมจเหลืองอร่ามทั้งจอ" }
+      { step: 1, char: "Shorekeeper", desc: "กาง Stellar Realm บัฟคริติคอลทั้งทีม" },
+      { step: 2, char: "Changli", desc: "ฟันขนนกเฟิ่งหวงสะสม True Sight -> ปล่อยอัลติวิหคเพลิง -> ส่ง Outro ให้ Encore" },
+      { step: 3, char: "Encore", desc: "แปลงร่าง Cosmos Rave ทุบรัวๆ -> สลับตัวกลับ Changli ทันทีเพื่อแคนเซิลท่า ดาเมจสองเท่าพร้อมกัน" }
     ]
   },
   {
     rank: 5,
     tier: "S+",
     name: "Cybernetic Electro Liberation",
-    nameTh: "ทีมหมัดจักรกลสายฟ้า เลเซอร์ถล่มบอส",
-    highlight: "คอมโบสายฟ้าล้วน บัฟ Resonance Liberation ตรงสาย หมัดคริหลักหมื่น",
-    tags: ["S+ Tier", "Resonance Liberation", "Electro Puppetry", "Laser Burst"],
+    nameTh: "อันดับ 5: Xiangli Yao + Yinlin + Shorekeeper (หมัดจักรกลสายฟ้า)",
+    highlight: "ทีมสายฟ้าที่เก่งที่สุดในเกม แทนที่ Calcharo อย่างสมบูรณ์แบบ เล่นง่าย คอมโบเสถียร",
+    tags: ["อันดับ 5 เมต้า", "S+ Tier", "Resonance Liberation", "Electro Definitive"],
     members: [
       { id: "xiangli_yao", name: "Xiangli Yao", role: "Main DPS", element: "Electro", weapon: "Gauntlets", thumb: "assets/characters/resonator_xiangli_yao.png" },
       { id: "yinlin", name: "Yinlin", role: "Sub DPS", element: "Electro", weapon: "Rectifier", thumb: "assets/characters/resonator_yinlin.png" },
       { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "โหมด Cogitation Matrix ของ Xiangli Yao ได้รับผลจาก Outro ของ Yinlin ที่มอบบัฟ Electro 20% + Liberation 25% ตรงสายเต็มๆ หมัดเลเซอร์ติดคริหลักหมื่นทุกฮิต",
+    synergy: "Xiangli Yao ปลดปล่อยโหมดลูกบาศก์จักรกลที่ดาเมจหลักคือ Resonance Liberation ซึ่ง Yinlin มอบ Outro Electro Deepen +20% และ Liberation Deepen +25% เข้ากันได้แบบไร้รอยต่อ ลบจุดอ่อนความเสี่ยงโดนขัดจังหวะของ Calcharo ทิ้งทั้งหมด",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "กางม่าน Stellar Realm มอบบัฟ CRIT Rate 12.5% และ CRIT DMG 25%" },
-      { step: 2, char: "Yinlin", desc: "เรียกหุ่นเชิด Zapstring ฟาดสายฟ้ากักขังศัตรู -> ส่ง Outro Electro + Liberation ให้ Xiangli Yao" },
-      { step: 3, char: "Xiangli Yao", desc: "เปิดโดมคำนวณลูกเต๋าจักรกล -> ปล่อยอัลติหมัดเลเซอร์ทุบลงพื้นรัว 3 สเต็ปติดคริติคอลกระจาย" }
+      { step: 1, char: "Shorekeeper", desc: "กางโดม Stellar Realm แจกบัฟ CRIT Rate และ CRIT DMG" },
+      { step: 2, char: "Yinlin", desc: "เรียกหุ่นเชิด Zapstring ฟาดสายฟ้ากักขังศัตรู -> ส่ง Outro ให้ Xiangli Yao" },
+      { step: 3, char: "Xiangli Yao", desc: "กางมิติ Cogitation Matrix -> ทุบหมัดเลเซอร์ 3 จังหวะติดคริติคอลดอกละหลายหมื่นต่อเนื่อง" }
     ]
   },
   {
     rank: 6,
     tier: "S+",
-    name: "Glacio Absolute Zero Precision",
-    nameTh: "ทีมสไนเปอร์เยือกแข็งศูนย์สัมบูรณ์",
-    highlight: "โจมตีระยะไกล เจาะเกราะเยือกแข็ง ปลอดภัยและรุนแรง",
-    tags: ["S+ Tier", "Glacio Resonance", "Sniper Precision", "Safe Distance"],
+    name: "Qingloong Wind Dragon Tempest",
+    nameTh: "อันดับ 6: Jiyan + Mortefi + Shorekeeper (มังกรพายุเขียวกวาดล้าง)",
+    highlight: "ที่สุดแห่งการเคลียร์มอนสเตอร์เป็นกลุ่ม (AoE King) มังกรดูดมอนสเตอร์ทั้งห้อง",
+    tags: ["อันดับ 6 เมต้า", "S+ Tier", "AoE King", "Heavy Attack God"],
     members: [
-      { id: "carlotta", name: "Carlotta", role: "Main DPS", element: "Glacio", weapon: "Pistols", thumb: "assets/characters/resonator_carlotta.png" },
-      { id: "zhezhi", name: "Zhezhi", role: "Sub DPS", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_zhezhi.png" },
+      { id: "jiyan", name: "Jiyan", role: "Main DPS", element: "Aero", weapon: "Broadblade", thumb: "assets/characters/resonator_jiyan.png" },
+      { id: "mortefi", name: "Mortefi", role: "Sub DPS", element: "Fusion", weapon: "Pistols", thumb: "assets/characters/resonator_mortefi.png" },
       { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "Carlotta ยิงสไนเปอร์น้ำแข็งระยะไกลประสานงานกับ Zhezhi ที่มอบบัฟ Glacio 20% + Skill 25% และ Shorekeeper บัฟคริติคอล ทำให้กระสุนน้ำแข็งเจาะเกราะบอสได้อย่างแม่นยำและปลอดภัย",
+    synergy: "ท่าไม้ตาย Qingloong ของ Jiyan นับเป็น Heavy Attack 100% ซึ่ง Mortefi (โดยเฉพาะ C6) มอบบัฟ Heavy Attack Deepen ถึง 38% สูงที่สุดในเกม เมื่อบวกกับการบัฟคริติคอลของ Shorekeeper มอนสเตอร์ทั้งห้องจะโดนรวบและสับแหลกโดยไม่สามารถขยับตัวได้",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "กางม่านบัฟพลังดาวและอัตราคริติคอล" },
-      { step: 2, char: "Zhezhi", desc: "สาดพู่กันน้ำแข็งสร้างนกช่วยยิง + บัฟ Glacio และ Skill DMG" },
-      { step: 3, char: "Carlotta", desc: "ล็อคเป้าชาร์จสไนเปอร์เยือกแข็งยิงเจาะหัวศัตรูจากระยะปลอดภัย ตัวเลขเด้งรัวๆ" }
+      { step: 1, char: "Shorekeeper", desc: "เปิด Stellar Realm บัฟคริติคอลและฮีล" },
+      { step: 2, char: "Mortefi", desc: "เป่าขลุ่ยอัญเชิญมังกรเพลิงอัลติประสาน -> ส่ง Outro Heavy Attack +38% ให้ Jiyan" },
+      { step: 3, char: "Jiyan", desc: "อัญเชิญมังกรสายลม Qingloong ควงหอกพุ่งดูดศัตรูทั้งเวที ดาเมจเด้งทั่วทั้งจอ" }
     ]
   },
   {
     rank: 7,
-    tier: "S",
-    name: "F2P Dark Scythe Havoc King",
-    nameTh: "ทีมเคียวมฤตยู F2P ขวัญใจมหาชน",
-    highlight: "ทีมฟรีที่ดาเมจเทียบเท่าตัว 5 ดาวลิมิเต็ด ปั้นง่ายเล่นสนุกสะใจ",
-    tags: ["S Tier", "F2P Friendly", "Dark Scythe", "Havoc Deepen +23%"],
+    tier: "S+",
+    name: "Solaris Resonance Spectro Cascade",
+    nameTh: "อันดับ 7: Phoebe + Zani + Shorekeeper (ระฆังสุริยะลงทัณฑ์)",
+    highlight: "ทีม Spectro ยุคใหม่ ผสานพลังหยุดเวลา ดีบัฟเกราะ และระเบิดเวทแสงวงกว้าง",
+    tags: ["อันดับ 7 เมต้า", "S+ Tier", "Spectro Resonance", "V2.1 Meta"],
     members: [
-      { id: "rover_havoc", name: "Rover-Havoc", role: "Main DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_rover_havoc.png" },
-      { id: "danjin", name: "Danjin", role: "Sub DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_danjin.png" },
-      { id: "verina", role: "Support", name: "Verina", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_verina.png" }
+      { id: "phoebe", name: "Phoebe", role: "Main DPS", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_phoebe.png" },
+      { id: "zani", name: "Zani", role: "Sub DPS", element: "Spectro", weapon: "Gauntlets", thumb: "assets/characters/resonator_zani.png" },
+      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "Danjin มอบ Outro บัฟ Havoc Deepen 23% ให้ Havoc Rover ปลดปล่อยพลัง Dark Surge สับเคียวมืดและทุบอัลติ Dead Trance ดาเมจทะลุหลักแสน",
+    synergy: "ทีมธาตุแสง Spectro 3 ตัวละครที่ทรงพลังที่สุด Phoebe ทำหน้าที่ระเบิดดาเมจเวทแสงเป็นวงกว้าง โดยมี Zani คอยลดเกราะศัตรูและหยุดการเคลื่อนไหว เสริมด้วย Shorekeeper ทำให้เกจ Spectro Frazzle สะสมและระเบิดสร้างดาเมจอย่างรวดเร็ว",
     rotation: [
-      { step: 1, char: "Verina", desc: "สกิลและอัลติบัฟพลังโจมตีและฮีลอย่างรวดเร็ว" },
-      { step: 2, char: "Danjin", desc: "สับเลือดตัวเองสะสมเกจ Chaos -> ฟันอัลติเลือดสาด -> ส่ง Outro Havoc +23% ให้ Rover" },
-      { step: 3, char: "Rover-Havoc", desc: "เข้าสู่ร่างมืด Dark Surge ควงเคียวยมทูตสับต่อเนื่อง 5 ฮิต -> ปิดฉากด้วย Dead Trance ทุบพื้นแตก" }
+      { step: 1, char: "Shorekeeper", desc: "กางโดม Stellar Realm แจกบัฟคริติคอล Spectro" },
+      { step: 2, char: "Zani", desc: "ชกคลื่นสุริยะหยุดจังหวะศัตรูและทำเครื่องหมายลดต้านทานแสง -> ส่ง Outro ให้ Phoebe" },
+      { step: 3, char: "Phoebe", desc: "ร่ายเวทระฆังแสงสุริยะลงทัณฑ์ ระเบิดคลื่น Spectro ต่อเนื่องเป็นวงกว้าง" }
     ]
   },
   {
     rank: 8,
-    tier: "S",
-    name: "Death Messenger Electro Assault",
-    nameTh: "ทีมยมทูตสายฟ้า ฟันสะบั้นสุดโหด",
-    highlight: "เกมเพลย์ฮาร์ดคอร์ ฟันคลื่นดาบต่อเนื่อง Death Messenger อลังการ",
-    tags: ["S Tier", "Electro Slasher", "Phantom Etching", "High Skill Ceiling"],
+    tier: "S+",
+    name: "Infernal Vanguard Dual Ignition",
+    nameTh: "อันดับ 8: Brant + Changli + Shorekeeper (เพลิงประลัยกัลป์แนวหน้า)",
+    highlight: "ทีมดาบเพลิงคู่ความเร็วสูง เผาผลาญเกจสั่นสะเทือนของบอสจนล้มลงในไม่กี่วินาที",
+    tags: ["อันดับ 8 เมต้า", "S+ Tier", "Fusion Duelist", "V2.1 Meta"],
     members: [
-      { id: "calcharo", name: "Calcharo", role: "Main DPS", element: "Electro", weapon: "Broadblade", thumb: "assets/characters/resonator_calcharo.png" },
-      { id: "yinlin", name: "Yinlin", role: "Sub DPS", element: "Electro", weapon: "Rectifier", thumb: "assets/characters/resonator_yinlin.png" },
-      { id: "verina", name: "Verina", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_verina.png" }
+      { id: "brant", name: "Brant", role: "Main DPS", element: "Fusion", weapon: "Sword", thumb: "assets/characters/resonator_brant.png" },
+      { id: "changli", name: "Changli", role: "Sub DPS", element: "Fusion", weapon: "Sword", thumb: "assets/characters/resonator_changli.png" },
+      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "Calcharo ในร่าง Phantom Etching รับบัฟ Electro 20% + Liberation 25% จาก Yinlin ฟันคลื่นดาบสายฟ้าและท่า Death Messenger ต่อเนื่องสะใจสายฮาร์ดคอร์",
+    synergy: "Brant ใช้เพลงดาบเพลิงประจัญบานที่ผสานกับ Outro Fusion Deepen 20% ของ Changli ได้อย่างลงตัว ทั้งคู่เน้นการเข้าปะทะอย่างรวดเร็ว มี I-Frame (จังหวะอมตะ) หลบหลีกสูง ทำให้สามารถสร้างดาเมจได้ไม่หยุดหย่อนแม้บอสจะโจมตีสวน",
     rotation: [
-      { step: 1, char: "Verina", desc: "บัฟ ATK & ฮีลทีมเต็มพิกัด" },
-      { step: 2, char: "Yinlin", desc: "ร่ายสายฟ้าทำเครื่องหมาย Sinister Dappling -> ส่ง Outro บัฟสายฟ้าให้ Calcharo" },
-      { step: 3, char: "Calcharo", desc: "สวมร่างเงาปีศาจ ฟันชุดคอมโบ 3 รอบ -> รวบพลัง Death Messenger ฟาดคลื่นสายฟ้ายักษ์" }
+      { step: 1, char: "Shorekeeper", desc: "เปิดบัฟ Stellar Realm เพื่อรับประกันอัตราคริติคอล" },
+      { step: 2, char: "Changli", desc: "ฟันดาบวิหคเพลิงทำคอมโบ -> ส่ง Outro บัฟ Fusion Deepen ให้ Brant" },
+      { step: 3, char: "Brant", desc: "ควงดาบเพลิงพุ่งทะลวงแนวหน้า เผาผลาญเกจมอนสเตอร์จนล้มลงอย่างรวดเร็ว" }
     ]
   },
   {
     rank: 9,
-    tier: "S",
-    name: "Rapid Woolies Fusion Hypercarry",
-    nameTh: "ทีมน้องแกะเพลิง ทุบแหลกไร้ความปรานี",
-    highlight: "ทางเลือก F2P สุดคุ้มค่า เล่นง่าย คล่องตัว สกิลระเบิดทั้งจอ",
-    tags: ["S Tier", "Budget Friendly", "Basic ATK Buff", "Puppet Frenzy"],
+    tier: "S+",
+    name: "Black Shores Dark Matter Void",
+    nameTh: "อันดับ 9: Roccia + Camellya + Shorekeeper (ความมืดแห่งแบล็คชอร์ส)",
+    highlight: "การจับคู่สุดยอดนักสู้และซัพพอร์ตของ Black Shores ดูดรวบหลุมดำแล้วสับแหลก",
+    tags: ["อันดับ 9 เมต้า", "S+ Tier", "Havoc Resonance", "V2.0 Meta"],
     members: [
-      { id: "encore", name: "Encore", role: "Main DPS", element: "Fusion", weapon: "Rectifier", thumb: "assets/characters/resonator_encore.png" },
-      { id: "sanhua", name: "Sanhua", role: "Sub DPS", element: "Glacio", weapon: "Sword", thumb: "assets/characters/resonator_sanhua.png" },
-      { id: "verina", name: "Verina", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_verina.png" }
+      { id: "roccia", name: "Roccia", role: "Main / Sub DPS", element: "Havoc", weapon: "Gauntlets", thumb: "assets/characters/resonator_roccia.png" },
+      { id: "camellya", name: "Camellya", role: "Main DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_camellya.png" },
+      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "โหมด Cosmos Rave ของ Encore การโจมตีทั้งหมดนับเป็น Basic Attack การจับคู่กับ Sanhua (บัฟ Basic Attack +38%) ทำให้เป็นทีมที่ปั้นง่าย เล่นคล่อง และดาเมจสูง",
+    synergy: "Roccia ทำหน้าที่กางอาณาเขตแรงโน้มถ่วงมืดและสร้างสภาวะ Void Trap ดึงดูดศัตรูเข้ามารวมกันที่จุดศูนย์กลาง จากนั้น Camellya สลับตัวเข้ามาหมุนสับเถาวัลย์ Blossom Swirl กวาดล้างศัตรูทั้งหมดในคราวเดียว",
     rotation: [
-      { step: 1, char: "Verina", desc: "กางบัฟ ATK 20% และบัฟกุหลาบเร่งเกจ" },
-      { step: 2, char: "Sanhua", desc: "ชาร์จเกจเสี้ยวน้ำแข็ง 3 วินาที -> ส่ง Outro Basic Attack +38% ให้ Encore" },
-      { step: 3, char: "Encore", desc: "ปลดปล่อยร่าง Cosmos Rave กระโดดขี่ตุ๊กตาแกะไฟทุบพื้นเป็นลาวาระเบิดรัวๆ" }
+      { step: 1, char: "Shorekeeper", desc: "กางม่านดวงดาว Stellar Realm บัฟคริติคอล" },
+      { step: 2, char: "Roccia", desc: "ปล่อยหมัดแรงโน้มถ่วง Void หลุมดำดูดศัตรูมารวมกัน -> ส่ง Outro ให้ Camellya" },
+      { step: 3, char: "Camellya", desc: "พุ่งเข้าสู่ใจกลางหลุมดำ สับเถาวัลย์สีเลือดกวาดล้างกลุ่มศัตรูอย่างเด็ดขาด" }
     ]
   },
   {
     rank: 10,
     tier: "S",
-    name: "Dual Fusion Gatling Bullet Burst",
-    nameTh: "ทีมปืนคู่เพลิงนรก กราดยิงกระสุน 30 นัด",
-    highlight: "กระหน่ำยิงบอสเป้าหมายเดี่ยวหลอดเลือดละลายฮวบด้วย Boom Dance",
-    tags: ["S Tier", "Gatling Fire", "Fusion Synergy", "Rapid Fire"],
+    name: "F2P Dark Scythe Havoc King",
+    nameTh: "อันดับ 10: Havoc Rover + Danjin + Shorekeeper (เคียวมฤตยู F2P ขวัญใจมหาชน)",
+    highlight: "ทีมฟรี F2P ที่เก่งที่สุดในประวัติศาสตร์เกม ดาเมจเทียบเท่าตัว 5 ดาวลิมิเต็ด ปั้นง่ายเล่นสนุก",
+    tags: ["อันดับ 10 เมต้า", "S Tier", "Best F2P Team", "Dark Scythe"],
     members: [
-      { id: "chixia", name: "Chixia", role: "Main DPS", element: "Fusion", weapon: "Pistols", thumb: "assets/characters/resonator_chixia.png" },
-      { id: "changli", name: "Changli", role: "Sub DPS", element: "Fusion", weapon: "Sword", thumb: "assets/characters/resonator_changli.png" },
-      { id: "verina", name: "Verina", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_verina.png" }
+      { id: "rover_havoc", name: "Rover-Havoc", role: "Main DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_rover_havoc.png" },
+      { id: "danjin", name: "Danjin", role: "Sub DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_danjin.png" },
+      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "Chixia ชาร์จกระสุน 30 นัด กราดยิงสกิล Boom Dance ทะลวงบอส พร้อมรับบัฟ Fusion Deepen 20% จาก Changli และบัฟพลังโจมตีจาก Verina หลอดเลือดบอสละลายฮวบ",
+    synergy: "ทีมที่ผู้เล่นสายฟรีทุกคนต้องมี Danjin มอบ Outro Havoc Deepen +23% ให้ Havoc Rover ปลดปล่อยพลัง Dark Surge สับเคียวมืดและทุบอัลติ Dead Trance ดาเมจทะลุหลักแสน สามารถเคลียร์ Tower of Adversity ชั้นสูงสุด 30 ดาวได้สบายๆ",
     rotation: [
-      { step: 1, char: "Verina", desc: "บัฟพลังโจมตีและฮีลทั้งทีม" },
-      { step: 2, char: "Changli", desc: "ฟันเฟิ่งหวงเปลวเพลิงสร้างเปลวไฟ -> ส่ง Outro Fusion +20% ให้ Chixia" },
-      { step: 3, char: "Chixia", desc: "สาดกระสุนปืนคู่ Boom Dance 30 นัดรัวต่อเนื่อง -> จบด้วยกระสุนระเบิด Blazing Fireworks" }
+      { step: 1, char: "Shorekeeper", desc: "กาง Stellar Realm มอบบัฟ CRIT Rate และ CRIT DMG (หรือใช้ Verina แทนได้)" },
+      { step: 2, char: "Danjin", desc: "สับเลือดสะสมเกจ Chaos -> ฟันอัลติเลือดสาด -> ส่ง Outro Havoc Deepen +23% ให้ Rover" },
+      { step: 3, char: "Rover-Havoc", desc: "เข้าสู่ร่างมืด Dark Surge ควงเคียวยมทูตสับ 5 ฮิต -> ปิดฉากด้วย Dead Trance ทุบพื้นแตก 200,000+" }
     ]
   }
 ];
