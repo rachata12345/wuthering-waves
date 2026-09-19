@@ -115,40 +115,40 @@
   },
   {
     rank: 7,
-    tier: "T0.5",
-    name: "Lucy Divine Spectro Pistols",
-    nameTh: "อันดับ 7: Lucy (ลูซี่) + Lynae (ไลนี) + Luuk Herssen (ลุค)",
-    highlight: "ทีมปืนคู่และสนับมือแสงศักดิ์สิทธิ์ ยิงกราดกระสุนแสงรัวทะลุเกราะทุกประเภท",
-    tags: ["อันดับ 7", "T0.5", "Lucy BiS", "Gun-Kata Spectro"],
+    tier: "T0",
+    name: "Cyberpunk Edgerunners Cyberspace Protocol",
+    nameTh: "อันดับ 7: Lucy (ลูซี่) + Rebecca (รีเบคกา) + Shorekeeper / Mornye",
+    highlight: "ทีมคู่หู Collab Cyberpunk: Edgerunners (v3.4) เน็ตรันเนอร์เจาะเกราะทะลวง Cyberspace",
+    tags: ["อันดับ 7", "T0", "Cyberpunk Collab", "Lucy & Rebecca"],
     members: [
       { id: "lucy", name: "Lucy", role: "Main DPS", element: "Spectro", weapon: "Pistols", thumb: "assets/characters/resonator_lucy.png" },
-      { id: "lynae", name: "Lynae", role: "Sub DPS", element: "Spectro", weapon: "Pistols", thumb: "assets/characters/resonator_lynae.png" },
-      { id: "luuk_herssen", name: "Luuk Herssen", role: "Support", element: "Spectro", weapon: "Gauntlets", thumb: "assets/characters/resonator_luuk_herssen.png" }
+      { id: "rebecca", name: "Rebecca", role: "Sub DPS / Buffer", element: "Electro", weapon: "Pistols", thumb: "assets/characters/resonator_rebecca.png" },
+      { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "Lucy ปืนคู่ธาตุแสงผสานกับ Lynae สาดกระสุนแสงแบบ Gun-Kata ต่อเนื่อง โดยมี Luuk Herssen คอยชกหยุดจังหวะและกางเกราะป้องกัน คล่องตัวสูงและยิงเจาะเกราะได้อย่างแม่นยำ",
+    synergy: "ตี้ตรงตามต้นฉบับและเมต้าจริง 100%! Lucy คือเน็ตรันเนอร์ (Netrunner) จาก Cyberpunk: Edgerunners ถือปืน Spectral Trigger เข้าสู่โหมด Cyberspace ใช้แต้ม RAM เจาะเกราะบอส (DEF Shred) โดยมี Rebecca มอบบัฟพิเศษ 'Edgerunner Bonds' เพิ่ม All DMG และ Heavy Attack อย่างมหาศาล!",
     rotation: [
-      { step: 1, char: "Luuk Herssen", desc: "ชกคลื่นสุริยะกางบาเรียป้องกันและแจกบัฟ Spectro" },
-      { step: 2, char: "Lynae", desc: "ไลนีกราดยิงกระสุนแสงหยุดจังหวะบอส -> ส่ง Outro ให้ Lucy" },
-      { step: 3, char: "Lucy", desc: "ลูซี่ลั่นไกปืนคู่แสงศักดิ์สิทธิ์ ระดมยิงเจาะเกราะบอสด้วยกระสุนคริติคอลรัวๆ" }
+      { step: 1, char: "Shorekeeper", desc: "เปิด Stellar Realm บัฟคริติคอลและความเร็ว" },
+      { step: 2, char: "Rebecca", desc: "รีเบคกาสาดปืนกลตั้งป้อม พร้อมแจกบัฟสายใย Edgerunner Bonds -> ส่ง Outro ให้ Lucy" },
+      { step: 3, char: "Lucy", desc: "ลูซี่แฮกเจาะเข้า Cyberspace ดำดิ่งใช้ Quick-Hack สับกระสุนแสงเลเซอร์ทะลุเกราะ 100% บอสละลายทันที!" }
     ]
   },
   {
     rank: 8,
     tier: "T0.5",
-    name: "Rebecca Cybernetic Gunslinger",
-    nameTh: "อันดับ 8: Rebecca (รีเบคกา) + Buling (ปู้หลิง) + Shorekeeper",
-    highlight: "ทีมปืนคู่สายฟ้าความเร็วสูง รีเบคกาสาดกระสุนอัสนีบาต ปู้หลิงช่วยชาร์จประจุ",
-    tags: ["อันดับ 8", "T0.5", "Rebecca BiS", "Electro Pistols"],
+    name: "Lucilla Absolute Glacio Storm",
+    nameTh: "อันดับ 8: Lucilla (ลูซิลลา) + Hiyuki (ฮิยูกิ) + Shorekeeper",
+    highlight: "ทีมพายุเยือกแข็งลูซิลลา & ฮิยูกิ ม่านหิมะศูนย์สัมบูรณ์ ปลอดภัยและหนาแน่น",
+    tags: ["อันดับ 8", "T0.5", "Glacio Frost", "v3.4 Meta"],
     members: [
-      { id: "rebecca", name: "Rebecca", role: "Main DPS", element: "Electro", weapon: "Pistols", thumb: "assets/characters/resonator_rebecca.png" },
-      { id: "buling", name: "Buling", role: "Sub DPS", element: "Electro", weapon: "Rectifier", thumb: "assets/characters/resonator_buling.png" },
+      { id: "lucilla", name: "Lucilla", role: "Main DPS", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_lucilla.png" },
+      { id: "hiyuki", name: "Hiyuki", role: "Sub DPS", element: "Glacio", weapon: "Sword", thumb: "assets/characters/resonator_hiyuki.png" },
       { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
     ],
-    synergy: "Rebecca ปืนคู่สายฟ้าสุดเท่ คล่องตัวสูง เคลื่อนที่ยิงรวดเร็ว Buling ช่วยชาร์จประจุและรีชาร์จสกิล ทำให้รีเบคกาสามารถสไลด์ยิงกระสุนอัสนีบาตได้ต่อเนื่องไร้สะดุด",
+    synergy: "Lucilla กางอาณาเขตพายุหิมะน้ำแข็งเวทมนตร์วงกว้าง โดยมี Hiyuki ช่วยชักดาบตัดมิติน้ำแข็งซ้ำเติมจุดอ่อน ทำให้เกิดการแช่แข็งแบบไม่สิ้นสุด",
     rotation: [
-      { step: 1, char: "Shorekeeper", desc: "กางม่าน Stellar Realm บัฟคริติคอล" },
-      { step: 2, char: "Buling", desc: "ปู้หลิงปล่อยกระแสไฟฟ้าชาร์จประจุ -> ส่ง Outro ให้ Rebecca" },
-      { step: 3, char: "Rebecca", desc: "รีเบคกาสไลด์ตัวสาดกระสุนสายฟ้ารอบทิศทาง ดาเมจคริติคอลระเบิดรัวๆ" }
+      { step: 1, char: "Shorekeeper", desc: "เปิด Stellar Realm บัฟคริติคอล" },
+      { step: 2, char: "Hiyuki", desc: "ฮิยูกิฟันดาบน้ำแข็งแช่แข็งศัตรู -> ส่ง Outro ให้ Lucilla" },
+      { step: 3, char: "Lucilla", desc: "ลูซิลลาร่ายพายุหิมะกลืนกินสนามรบ ระเบิดผลึกน้ำแข็งสร้างดาเมจกระจาย" }
     ]
   },
   {
