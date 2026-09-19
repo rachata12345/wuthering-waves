@@ -1,0 +1,1489 @@
+﻿<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แฟ้มสะสมผลงาน (Portfolio) | นายสมคิด เรียนดี - นักเรียนมัธยมศึกษาตอนปลาย</title>
+  <meta name="description" content="แฟ้มสะสมผลงานนักเรียนมัธยมศึกษาตอนปลาย แผนการเรียนวิทยาศาสตร์-คณิตศาสตร์ มุ่งสู่คณะวิศวกรรมศาสตร์และเทคโนโลยี">
+
+  <!-- Google Fonts: Prompt (ภาษาไทย) & Space Grotesk (ตัวเลขและหัวข้อ) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       1. ตัวแปร CSS Variables & ระบบสี (60-30-10 Rule)
+       ============================================================ */
+    :root {
+      /* Dark Theme (Default: สไตล์โมเดิร์นเท่ สไตล์ Tech) */
+      --bg: #0a0f1d;
+      --bg-alt: #111827;
+      --surface: #161f33;
+      --surface-hover: #1e293b;
+      --border: #243049;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      
+      --primary: #6366f1;         /* Indigo */
+      --primary-hover: #4f46e5;
+      --primary-glow: rgba(99, 102, 241, 0.25);
+      --accent: #06b6d4;          /* Cyan */
+      --accent-glow: rgba(6, 182, 212, 0.2);
+      --success: #10b981;
+      
+      --gradient-brand: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+      --gradient-card: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+      
+      --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.18);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --bg-alt: #f1f5f9;
+      --surface: #ffffff;
+      --surface-hover: #f8fafc;
+      --border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-glow: rgba(79, 70, 229, 0.15);
+      --accent: #0284c7;
+      --accent-glow: rgba(2, 132, 199, 0.15);
+      
+      --gradient-brand: linear-gradient(135deg, #4f46e5 0%, #0284c7 100%);
+      --gradient-card: linear-gradient(180deg, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0) 100%);
+      
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 10px 20px -5px rgba(0,0,0,0.08);
+      --shadow-glow: 0 0 25px rgba(79, 70, 229, 0.1);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .font-num {
+      font-family: 'Space Grotesk', 'Prompt', sans-serif;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 5.5rem 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.9rem;
+      background: var(--primary-glow);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-full);
+      font-size: 0.825rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.85rem, 3.5vw + 0.5rem, 2.6rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ============================================================
+       2. Navigation Bar (Glassmorphism & Sticky)
+       ============================================================ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 15, 29, 0.8);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    [data-theme="light"] .navbar {
+      background: rgba(248, 250, 252, 0.85);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+
+    .brand-avatar-mini {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--gradient-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .btn-icon {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-icon:hover {
+      background: var(--surface-hover);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .hamburger-btn {
+      display: none;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-primary {
+      background: var(--gradient-brand);
+      color: white;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      border-color: var(--border);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-hover);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       3. Hero Section (ข้อมูลส่วนตัว & แนะนำตัว)
+       ============================================================ */
+    .hero {
+      padding-top: 8.5rem;
+      padding-bottom: 5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 4.5vw + 0.5rem, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-bio {
+      font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Quick Stats Bar */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Avatar & Profile Card */
+    .hero-avatar-card {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 1/1;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .avatar-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: calc(var(--radius-lg) + 2px);
+      background: var(--gradient-brand);
+      z-index: -1;
+      opacity: 0.6;
+      filter: blur(12px);
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: calc(var(--radius-lg) - 8px);
+      background: linear-gradient(145deg, var(--bg-alt), var(--surface));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      border: 1px solid var(--border);
+    }
+
+    .avatar-icon-large {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--gradient-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+      margin-bottom: 1.25rem;
+    }
+
+    .floating-chip {
+      position: absolute;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      animation: float 4s ease-in-out infinite alternate;
+    }
+
+    .floating-chip.top-right {
+      top: 10px;
+      right: -15px;
+      animation-delay: 0.5s;
+    }
+
+    .floating-chip.bottom-left {
+      bottom: 15px;
+      left: -15px;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    /* ============================================================
+       4. About Section (ข้อมูลประวัติการศึกษา & เป้าหมาย)
+       ============================================================ */
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-glow);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .info-title {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .info-val {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .goal-box {
+      background: var(--bg);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .goal-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ============================================================
+       5. Skills Section (ทักษะความสามารถ)
+       ============================================================ */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .skill-category-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .skill-category-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .category-icon {
+      font-size: 1.6rem;
+    }
+
+    .category-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .skill-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.35rem;
+      font-size: 0.925rem;
+      font-weight: 500;
+    }
+
+    .skill-track {
+      width: 100%;
+      height: 8px;
+      background: var(--bg-alt);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      border-radius: var(--radius-full);
+      background: var(--gradient-brand);
+      transition: width 1s ease-in-out;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.65rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       6. Projects & Activities (ผลงานเด่น & กิจกรรม)
+       ============================================================ */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+
+    .project-thumbnail {
+      height: 180px;
+      background: linear-gradient(135deg, var(--surface-hover), var(--bg-alt));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .project-tag-float {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(10, 15, 29, 0.85);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .project-content {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.2s ease;
+    }
+
+    .project-link:hover {
+      gap: 0.6rem;
+    }
+
+    /* ============================================================
+       7. Social Links & Contact (ปุ่มโซเชียล & การติดต่อ)
+       ============================================================ */
+    .contact-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-brand);
+    }
+
+    .social-buttons-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2.5rem 0 2rem;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1.6rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+    }
+
+    .social-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .social-btn.facebook:hover {
+      background: #1877f2;
+      border-color: #1877f2;
+      color: white;
+    }
+
+    .social-btn.instagram:hover {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      border-color: transparent;
+      color: white;
+    }
+
+    .social-btn.github:hover {
+      background: #24292e;
+      border-color: #24292e;
+      color: white;
+    }
+
+    .social-btn.email:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .social-btn.line:hover {
+      background: #06c755;
+      border-color: #06c755;
+      color: white;
+    }
+
+    /* Fast Message / Copy Box */
+    .quick-copy-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .copy-btn {
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0.2rem 0.5rem;
+    }
+
+    .copy-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* ============================================================
+       8. Footer & Toast
+       ============================================================ */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
+      background: var(--bg);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Toast Alert Notification */
+    .toast-box {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 9999;
+      background: var(--surface);
+      color: var(--text-main);
+      border: 1px solid var(--primary);
+      padding: 0.85rem 1.4rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: none;
+      align-items: center;
+      gap: 0.6rem;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* ============================================================
+       9. Responsive Media Queries (Mobile-First Polish)
+       ============================================================ */
+    @media (max-width: 868px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+
+      .hero-badge {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .about-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hamburger-btn {
+        display: flex;
+      }
+
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.25rem;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== Header & Navigation ==================== -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="nav-brand">
+        <div class="brand-avatar-mini">ส</div>
+        <span>Somkid.Dev</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link">เกี่ยวกับฉัน</a></li>
+        <li><a href="#skills" class="nav-link">ทักษะ</a></li>
+        <li><a href="#projects" class="nav-link">ผลงาน & กิจกรรม</a></li>
+        <li><a href="#contact" class="nav-link">ช่องทางติดต่อ</a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Light / Dark Toggle -->
+        <button class="btn-icon" id="themeToggle" aria-label="สลับโหมดมืด/สว่าง" title="สลับธีม">
+          🌙
+        </button>
+        <!-- Contact CTA Button -->
+        <a href="#contact" class="btn btn-primary" style="display: none; @media(min-width: 640px){display: inline-flex;}">
+          ติดต่อฉัน
+        </a>
+        <!-- Mobile Hamburger Button -->
+        <button class="btn-icon hamburger-btn" id="hamburgerBtn" aria-label="เปิดเมนู">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== Hero Section ==================== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Text & Intro Column -->
+        <div class="hero-text-col">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>ม.6 สายวิทย์-คณิต • พร้อมเปิดรับโอกาสเรียนรู้</span>
+          </div>
+
+          <h1 class="hero-title">
+            สวัสดีครับ! ผมชื่อ<br>
+            <span class="gradient-text">นายสมคิด เรียนดี</span>
+          </h1>
+
+          <p class="hero-bio">
+            นักเรียนมัธยมศึกษาตอนปลายที่มีความหลงใหลใน <strong>เทคโนโลยี การเขียนโค้ด และการออกแบบนวัตกรรม</strong> 
+            มุ่งมั่นนำความรู้ไปต่อยอดในระดับอุดมศึกษา เพื่อสร้างสรรค์ผลงานที่เป็นประโยชน์ต่อสังคม
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              🚀 ดูผลงานเด่น
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              📬 ช่องทางติดต่อ
+            </a>
+          </div>
+
+          <!-- Quick Stats Counter -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number font-num gradient-text">3.88</span>
+              <span class="stat-label">เกรดเฉลี่ย (GPAX)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number font-num gradient-text">10+</span>
+              <span class="stat-label">โครงงาน & กิจกรรม</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number font-num gradient-text">5</span>
+              <span class="stat-label">รางวัล & เกียรติบัตร</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Avatar & Interactive Mockup Column -->
+        <div class="hero-avatar-card">
+          <div class="avatar-wrapper">
+            <div class="avatar-inner">
+              <div class="avatar-icon-large">
+                👨‍💻
+              </div>
+              <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.25rem;">สมคิด เรียนดี (ภูมิ)</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">โรงเรียนเตรียมศึกษาพัฒนาการ</p>
+              <div style="margin-top: 1rem; display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center;">
+                <span class="tag">#Coder</span>
+                <span class="tag">#Innovator</span>
+                <span class="tag">#FutureEngineer</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge Chips -->
+            <div class="floating-chip top-right">
+              <span>🏆</span>
+              <span>เหรียญทอง Hackathon</span>
+            </div>
+            <div class="floating-chip bottom-left">
+              <span>💻</span>
+              <span>Python & Web Dev</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== About Me Section ==================== -->
+  <section id="about" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">ประวัติ & ข้อมูลส่วนตัว</div>
+        <h2 class="section-title">เกี่ยวกับตัวผม</h2>
+        <p class="section-desc">ข้อมูลการศึกษา ความสนใจ และเป้าหมายในอนาคต</p>
+      </div>
+
+      <div class="about-card">
+        <!-- Personal Info List -->
+        <div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 700;">ข้อมูลทั่วไป</h3>
+          <ul class="info-list">
+            <li class="info-item">
+              <div class="info-icon">🏫</div>
+              <div>
+                <div class="info-title">สถานศึกษา</div>
+                <div class="info-val">โรงเรียนเตรียมศึกษาพัฒนาการ (ระดับชั้น ม.6)</div>
+              </div>
+            </li>
+            <li class="info-item">
+              <div class="info-icon">📚</div>
+              <div>
+                <div class="info-title">แผนการเรียน</div>
+                <div class="info-val">วิทยาศาสตร์ - คณิตศาสตร์ (ห้องเรียนพิเศษคอมพิวเตอร์)</div>
+              </div>
+            </li>
+            <li class="info-item">
+              <div class="info-icon">💡</div>
+              <div>
+                <div class="info-title">ความสนใจพิเศษ</div>
+                <div class="info-val">Web Development, ปัญญาประดิษฐ์ (AI), หุ่นยนต์ & IoT</div>
+              </div>
+            </li>
+            <li class="info-item">
+              <div class="info-icon">🎨</div>
+              <div>
+                <div class="info-title">งานอดิเรก</div>
+                <div class="info-val">ทำโครงงานเทคโนโลยี, ถ่ายภาพ, เล่นกีตาร์, แข่งขัน CTF</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Goals & Vision -->
+        <div class="goal-box">
+          <div class="goal-title">
+            <span>🎯</span>
+            <span>เป้าหมายการศึกษาต่อ</span>
+          </div>
+          <p style="color: var(--text-muted); margin-bottom: 1.25rem; font-size: 0.95rem; line-height: 1.7;">
+            มีความตั้งใจที่จะเข้าศึกษาต่อในระดับปริญญาตรี <strong>คณะวิศวกรรมศาสตร์ ภาควิชาวิศวกรรมคอมพิวเตอร์</strong> 
+            หรือ <strong>คณะเทคโนโลยีสารสนเทศ</strong> เพื่อฝึกฝนความเชี่ยวชาญด้านการพัฒนาซอฟต์แวร์และ AI Solution
+          </p>
+          <div style="background: var(--surface); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.2rem;">คติประจำใจในการทำงาน:</div>
+            <div style="font-style: italic; font-weight: 500; color: var(--text-main);">
+              "การเรียนรู้ไม่มีที่สิ้นสุด ทุกความผิดพลาดคือบันไดสู่การสร้างสรรค์สิ่งใหม่"
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Skills Section ==================== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">ความสามารถ</div>
+        <h2 class="section-title">ทักษะ & ความเชี่ยวชาญ</h2>
+        <p class="section-desc">ทักษะที่ได้เรียนรู้และฝึกฝนจากการทำโครงงานจริงและการแข่งขัน</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Card 1: Coding & Programming -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <div class="category-icon">💻</div>
+            <div class="category-name">การเขียนโปรแกรม</div>
+          </div>
+          
+          <div class="skill-bars">
+            <!-- Skill 1 -->
+            <div>
+              <div class="skill-info">
+                <span>HTML5 / CSS3 / JavaScript</span>
+                <span class="font-num">85%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" style="width: 85%;"></div>
+              </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div>
+              <div class="skill-info">
+                <span>Python (Data & Automation)</span>
+                <span class="font-num">80%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" style="width: 80%;"></div>
+              </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div>
+              <div class="skill-info">
+                <span>C++ / Arduino (IoT & หุ่นยนต์)</span>
+                <span class="font-num">75%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" style="width: 75%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-tags">
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Bootstrap/Tailwind</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Creative & Design -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <div class="category-icon">🎨</div>
+            <div class="category-name">การออกแบบ & สื่อ</div>
+          </div>
+
+          <div class="skill-bars">
+            <!-- Skill 1 -->
+            <div>
+              <div class="skill-info">
+                <span>Figma (UI/UX Design)</span>
+                <span class="font-num">80%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" style="width: 80%;"></div>
+              </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div>
+              <div class="skill-info">
+                <span>Canva & Photoshop</span>
+                <span class="font-num">85%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" style="width: 85%;"></div>
+              </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div>
+              <div class="skill-info">
+                <span>การตัดต่อวิดีโอ (CapCut / Premiere)</span>
+                <span class="font-num">70%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" style="width: 70%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-tags">
+            <span class="tag">Infographic</span>
+            <span class="tag">Presentation</span>
+            <span class="tag">Wireframing</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Soft Skills & Languages -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <div class="category-icon">🤝</div>
+            <div class="category-name">ทักษะรอบด้าน & ภาษา</div>
+          </div>
+
+          <div class="skill-bars">
+            <!-- Skill 1 -->
+            <div>
+              <div class="skill-info">
+                <span>การทำงานเป็นทีม & ความเป็นผู้นำ</span>
+                <span class="font-num">90%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" style="width: 90%;"></div>
+              </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div>
+              <div class="skill-info">
+                <span>ภาษาอังกฤษ (การสื่อสาร & อ่านเอกสาร)</span>
+                <span class="font-num">75%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" style="width: 75%;"></div>
+              </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div>
+              <div class="skill-info">
+                <span>การนำเสนอผลงาน (Pitching)</span>
+                <span class="font-num">85%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress" style="width: 85%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-tags">
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Time Management</span>
+            <span class="tag">Public Speaking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Projects & Activities Section ==================== -->
+  <section id="projects" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">ผลงานที่ภาคภูมิใจ</div>
+        <h2 class="section-title">โครงงาน & กิจกรรมเด่น</h2>
+        <p class="section-desc">ประสบการณ์ลงมือทำจริงในการแข่งขันและโครงงานวิทยาศาสตร์</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-thumbnail">
+            🌱
+            <span class="project-tag-float">IoT & Web</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Smart Garden: ระบบดูแลฟาร์มผักอัจฉริยะ</h3>
+            <p class="project-desc">
+              โครงงานพัฒนาอุปกรณ์ IoT วัดความชื้นและอุณหภูมิในดิน เชื่อมต่อเข้ากับ Web Dashboard เพื่อควบคุมการรดน้ำอัตโนมัติผ่านสมาร์ทโฟน
+            </p>
+            <div class="project-footer">
+              <span class="tag">Arduino • ESP32 • Web</span>
+              <a href="#contact" class="project-link">ดูรายละเอียด →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-thumbnail">
+            🏆
+            <span class="project-tag-float">รางวัลชนะเลิศ</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">เหรียญทอง การแข่งขัน Hackathon เยาวชน</h3>
+            <p class="project-desc">
+              ร่วมกับทีมพัฒนาแอปพลิเคชันต้นแบบช่วยจัดการขยะในโรงเรียน โดยมีระบบสะสมแต้มแลกของรางวัล ได้รับรางวัลชนะเลิศอันดับ 1 ระดับเขตพื้นที่
+            </p>
+            <div class="project-footer">
+              <span class="tag">Figma • Pitching • ทีม 4 คน</span>
+              <a href="#contact" class="project-link">ดูเกียรติบัตร →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-thumbnail">
+            📚
+            <span class="project-tag-float">Web Application</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">ระบบยืม-คืนหนังสือดิจิทัลชุมนุม</h3>
+            <p class="project-desc">
+              พัฒนาเว็บแอปพลิเคชันสำหรับสมาชิกชุมนุมคอมพิวเตอร์ ช่วยบันทึกการยืมคืนหนังสือและอุปกรณ์อิเล็กทรอนิกส์ ลดเวลาและเอกสารกระดาษ
+            </p>
+            <div class="project-footer">
+              <span class="tag">HTML/CSS/JS • LocalStorage</span>
+              <a href="#contact" class="project-link">ทดลองใช้งาน →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Contact & Social Links Section ==================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="section-tag">ติดต่อเรา</div>
+        <h2 class="section-title">ช่องทางการติดต่อ & โซเชียลมีเดีย</h2>
+        <p class="section-desc" style="max-width: 580px; margin: 0 auto;">
+          ยินดีพูดคุย แลกเปลี่ยนความรู้ หรือปรึกษาการทำโครงงานร่วมกัน สามารถติดต่อผมได้ผ่านช่องทางด้านล่างนี้เลยครับ
+        </p>
+
+        <!-- Social Buttons Grid with Inline SVGs -->
+        <div class="social-buttons-grid">
+          <!-- Facebook -->
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <span>Facebook</span>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Instagram</span>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-btn github">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:somkid.student@example.com" class="social-btn email">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span>ส่งอีเมล</span>
+          </a>
+        </div>
+
+        <!-- Quick Copy Email Box -->
+        <div class="quick-copy-box">
+          <span>📧 이เมล: <strong id="emailText">somkid.student@example.com</strong></span>
+          <button class="copy-btn" id="copyEmailBtn">คัดลอก</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <p style="margin-bottom: 0.5rem;">
+        ออกแบบและพัฒนาโดย <strong>นายสมคิด เรียนดี</strong> • โรงเรียนเตรียมศึกษาพัฒนาการ
+      </p>
+      <p style="font-size: 0.8rem; color: var(--text-muted);">
+        สร้างด้วยความตั้งใจ สำหรับใช้ประกอบการยื่นแฟ้มสะสมผลงาน (Portfolio) เข้าศึกษาต่อในระดับอุดมศึกษา
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast Alert -->
+  <div class="toast-box" id="toastBox">
+    <span>✅</span>
+    <span id="toastMessage">คัดลอกอีเมลเรียบร้อยแล้ว</span>
+  </div>
+
+  <!-- ==================== Vanilla JavaScript ==================== -->
+  <script>
+    // 1. Theme Toggle Logic (Light / Dark Mode)
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlEl = document.documentElement;
+
+    // Load persisted theme or default to dark
+    const savedTheme = localStorage.getItem('portfolio_theme') || 'dark';
+    htmlEl.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlEl.getAttribute('data-theme');
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('portfolio_theme', nextTheme);
+      themeToggle.textContent = nextTheme === 'dark' ? '☀️' : '🌙';
+      showToast(nextTheme === 'dark' ? '🌙 เปลี่ยนเป็นโหมดมืด' : '☀️ เปลี่ยนเป็นโหมดสว่าง');
+    });
+
+    // 2. Mobile Hamburger Menu Toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      hamburgerBtn.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
+    });
+
+    // Close menu when clicking nav link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburgerBtn.textContent = '☰';
+      });
+    });
+
+    // 3. Copy Email to Clipboard
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const emailText = document.getElementById('emailText').textContent;
+
+    copyEmailBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(emailText).then(() => {
+        showToast('📋 คัดลอกอีเมล ' + emailText + ' แล้ว');
+      }).catch(() => {
+        showToast('อีเมล: ' + emailText);
+      });
+    });
+
+    // 4. Toast Notification
+    function showToast(text) {
+      const toastBox = document.getElementById('toastBox');
+      const toastMessage = document.getElementById('toastMessage');
+      toastMessage.textContent = text;
+      toastBox.style.display = 'flex';
+
+      setTimeout(() => {
+        toastBox.style.display = 'none';
+      }, 3000);
+    }
+
+    // 5. Active Nav Link on Scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 120;
+        if (window.scrollY >= top) {
+          current = sec.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
