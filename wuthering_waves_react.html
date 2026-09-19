@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wuthering Waves Guide & Encyclopedia (60 Resonators) - Standalone React 18</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700;800&family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- React 18 & Babel Standalone (No Node.js Required) -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #050811;
+      --bg-main: #080c17;
+      --bg-surface: #0c1324;
+      --bg-card: rgba(12, 19, 36, 0.94);
+      --cyan-wave: #00f0ff;
+      --cyan-deep: #0891b2;
+      --gold-solaris: #f59e0b;
+      --gold-bright: #fbbf24;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-highlight: rgba(0, 240, 255, 0.3);
+      --font-main: 'Prompt', sans-serif;
+      --font-tech: 'Chakra Petch', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; color-scheme: dark; }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Navbar */
+    .navbar {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      padding: 1rem 0; transition: all 0.3s ease;
+      background: rgba(5, 8, 17, 0.75); border-bottom: 1px solid transparent;
+    }
+    .navbar.scrolled {
+      background: rgba(8, 12, 23, 0.95);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.75rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-main); }
+    .logo-emblem {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--cyan-wave), var(--cyan-deep));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: #000; font-weight: 800;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    }
+    .logo-title { font-family: var(--font-tech); font-weight: 800; letter-spacing: 1.5px; font-size: 1.1rem; line-height: 1.1; }
+    .logo-sub { font-size: 0.65rem; color: var(--cyan-wave); letter-spacing: 2px; font-family: var(--font-tech); }
+    .nav-links { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
+    .nav-link { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s, transform 0.2s; cursor: pointer; }
+    .nav-link:hover { color: var(--cyan-wave); transform: translateY(-1px); }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+
+    .sound-toggle-btn {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
+      color: var(--text-muted); width: 38px; height: 38px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1.1rem; transition: all 0.2s;
+    }
+    .sound-toggle-btn:hover { border-color: var(--cyan-wave); color: var(--cyan-wave); transform: scale(1.05); }
+
+    .menu-toggle {
+      display: none; background: none; border: 1px solid var(--border-color);
+      color: var(--text-main); font-size: 1.4rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      font-family: var(--font-tech); font-weight: 700; font-size: 0.9rem;
+      padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;
+      cursor: pointer; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      border: none; outline: none;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold-solaris));
+      color: #050811; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5); }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.04); color: var(--text-main); border: 1px solid var(--border-color);
+    }
+    .btn-outline:hover {
+      border-color: var(--cyan-wave); color: var(--cyan-wave); background: rgba(0, 240, 255, 0.08); transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative; min-height: 90vh; display: flex; align-items: center;
+      padding-top: 6rem; padding-bottom: 4rem; overflow: hidden;
+    }
+    .hero-glow-sphere {
+      position: absolute; top: 20%; left: 50%; transform: translate(-50%, -20%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0, 240, 255, 0.12) 0%, rgba(245, 158, 11, 0.05) 50%, transparent 70%);
+      filter: blur(60px); pointer-events: none; z-index: 1;
+    }
+    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 900px; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.25);
+      color: var(--cyan-wave); padding: 0.35rem 1rem; border-radius: 9999px;
+      font-family: var(--font-tech); font-size: 0.8rem; margin-bottom: 1.5rem;
+    }
+    .hero-tag-pulse {
+      width: 8px; height: 8px; background: var(--cyan-wave); border-radius: 50%;
+      box-shadow: 0 0 10px var(--cyan-wave); animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 800; line-height: 1.2; margin-bottom: 1.25rem; letter-spacing: -0.5px;
+    }
+    .gold-text { color: var(--gold-bright); text-shadow: 0 0 25px rgba(251, 191, 36, 0.35); }
+    .cyan-gradient-text {
+      background: linear-gradient(135deg, var(--cyan-wave), #38bdf8);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; max-width: 720px; margin: 0 auto 2rem;
+    }
+    .hero-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+    .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 1rem; }
+    .stat-card {
+      background: var(--bg-card); border: 1px solid var(--border-color); padding: 1.25rem 1rem;
+      border-radius: 12px; text-align: center; transition: transform 0.2s, border-color 0.2s; contain: content;
+    }
+    .stat-card:hover { transform: translateY(-3px); border-color: var(--border-highlight); }
+    .stat-num { font-family: var(--font-tech); font-size: 1.8rem; font-weight: 800; color: var(--cyan-wave); margin-bottom: 0.25rem; }
+    .stat-label { font-size: 0.8rem; color: var(--text-dim); }
+
+    /* Sections */
+    .section-title-wrap { text-align: center; margin-bottom: 3rem; }
+    .section-subtitle { font-family: var(--font-tech); color: var(--cyan-wave); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+    .section-h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; }
+
+    .about-section { padding: 6rem 0; background: var(--bg-main); border-top: 1px solid var(--border-color); }
+    .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .about-card {
+      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px;
+      padding: 2rem 1.5rem; transition: transform 0.2s, border-color 0.2s; contain: content;
+    }
+    .about-card:hover { transform: translateY(-4px); border-color: var(--cyan-wave); }
+    .about-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .about-card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main); }
+    .about-card-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* Featured Showcase */
+    .resonators-section { padding: 6rem 0; background: var(--bg-dark); }
+    .char-tabs-bar { display: flex; gap: 0.75rem; overflow-x: auto; padding-bottom: 1rem; margin-bottom: 2rem; scrollbar-width: thin; }
+    .char-tab-item {
+      display: flex; align-items: center; gap: 0.65rem; background: var(--bg-card);
+      border: 1px solid var(--border-color); border-radius: 12px; padding: 0.6rem 1rem;
+      cursor: pointer; white-space: nowrap; transition: all 0.2s;
+    }
+    .char-tab-item:hover, .char-tab-item.active {
+      border-color: var(--gold-bright); background: rgba(245, 158, 11, 0.12); transform: translateY(-2px);
+    }
+    .char-tab-thumb { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+    .char-tab-label { font-family: var(--font-tech); font-weight: 700; font-size: 0.9rem; color: var(--text-main); }
+
+    .resonator-showcase {
+      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px;
+      padding: 2.5rem; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center; contain: content;
+    }
+    .showcase-element-tag {
+      font-family: var(--font-tech); font-weight: 700; font-size: 0.75rem; padding: 0.2rem 0.6rem;
+      border-radius: 4px; background: rgba(0, 240, 255, 0.15); color: var(--cyan-wave); border: 1px solid rgba(0, 240, 255, 0.3);
+    }
+    .showcase-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.25rem; }
+    .showcase-sub { color: var(--gold-bright); font-size: 1rem; margin-bottom: 1rem; font-weight: 500; }
+    .showcase-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.25rem; }
+    .showcase-visual { text-align: center; }
+    .showcase-avatar-wrapper {
+      position: relative; width: 280px; height: 280px; margin: 0 auto 1.5rem; border-radius: 20px;
+      overflow: hidden; border: 2px solid var(--border-highlight);
+      background: radial-gradient(circle, rgba(0, 240, 255, 0.2) 0%, transparent 70%);
+    }
+    .showcase-portrait-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .showcase-portrait-img:hover { transform: scale(1.05); }
+    .showcase-weapon-tag { font-family: var(--font-tech); font-size: 0.85rem; color: var(--text-dim); }
+
+    /* Roster Encyclopedia */
+    .filter-controls-wrap {
+      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px;
+      padding: 1.5rem; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1.25rem;
+    }
+    .filter-group { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .filter-label { font-family: var(--font-tech); font-size: 0.85rem; color: var(--text-dim); margin-right: 0.5rem; }
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-color);
+      color: var(--text-muted); padding: 0.45rem 0.9rem; border-radius: 8px; font-size: 0.85rem;
+      font-family: var(--font-tech); cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(0, 240, 255, 0.15); border-color: var(--cyan-wave); color: var(--cyan-wave);
+    }
+    .filter-search-wrap { display: flex; align-items: center; gap: 0.5rem; }
+    .filter-search-input {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); color: var(--text-main);
+      padding: 0.5rem 1rem; border-radius: 8px; font-family: var(--font-main); font-size: 0.85rem;
+      width: 260px; outline: none; transition: border-color 0.2s;
+    }
+    .filter-search-input:focus { border-color: var(--cyan-wave); }
+
+    .all-roster-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1.25rem;
+    }
+    .roster-card {
+      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px;
+      padding: 1.15rem 0.85rem; text-align: center; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; cursor: pointer; contain: content;
+    }
+    .roster-card:hover {
+      transform: translateY(-5px); border-color: var(--card-element-color, var(--cyan-wave));
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px var(--card-glow, rgba(6, 182, 212, 0.3));
+    }
+    .roster-card.five-star { border-top: 3px solid var(--gold-solaris); }
+    .roster-card.four-star { border-top: 3px solid #c084fc; }
+
+    .roster-card-version {
+      position: absolute; top: 8px; right: 8px; font-family: var(--font-tech); font-size: 0.65rem;
+      font-weight: 700; padding: 1px 7px; border-radius: 6px; background: rgba(255, 255, 255, 0.08);
+      color: var(--text-dim); border: 1px solid rgba(255, 255, 255, 0.1); letter-spacing: 0.5px;
+    }
+    .roster-card-version.tba { background: rgba(245, 158, 11, 0.15); color: var(--gold-bright); border-color: rgba(245, 158, 11, 0.35); }
+
+    .roster-card-avatar {
+      width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--card-element-color, var(--border-color));
+      padding: 3px; background: var(--bg-surface); margin-bottom: 0.75rem; overflow: hidden;
+    }
+    .roster-card-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; transition: transform 0.3s; }
+    .roster-card:hover .roster-card-avatar img { transform: scale(1.1); }
+    .roster-card-name { font-size: 1rem; font-weight: 700; margin-bottom: 0.15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+    .roster-card-sub { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .roster-card-badge { font-family: var(--font-tech); font-size: 0.7rem; padding: 0.15rem 0.55rem; border-radius: 9999px; font-weight: 600; margin-top: auto; }
+
+    /* Meta Teams */
+    .team-filter-tabs { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .team-tab-btn {
+      background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-muted);
+      font-family: var(--font-tech); font-weight: 700; font-size: 0.9rem; padding: 0.65rem 1.25rem;
+      border-radius: 10px; cursor: pointer; transition: all 0.2s;
+    }
+    .team-tab-btn:hover, .team-tab-btn.active {
+      border-color: var(--cyan-wave); background: rgba(0, 240, 255, 0.12); color: var(--cyan-wave); transform: translateY(-2px);
+    }
+    .meta-teams-list { display: flex; flex-direction: column; gap: 2rem; }
+    .meta-team-card {
+      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px;
+      padding: 2rem; transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s; contain: content;
+    }
+    .meta-team-card:hover { transform: translateY(-3px); border-color: var(--border-highlight); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
+    .meta-team-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+    .meta-team-rank-badge {
+      width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-tech); font-size: 1.25rem; font-weight: 800;
+    }
+    .meta-team-rank-badge.rank-1 { background: linear-gradient(135deg, #fbbf24, #d97706); color: #000; box-shadow: 0 0 15px rgba(245, 158, 11, 0.5); }
+    .meta-team-rank-badge.rank-2 { background: linear-gradient(135deg, #e2e8f0, #94a3b8); color: #000; box-shadow: 0 0 15px rgba(226, 232, 240, 0.4); }
+    .meta-team-rank-badge.rank-3 { background: linear-gradient(135deg, #f97316, #b45309); color: #fff; box-shadow: 0 0 15px rgba(249, 115, 22, 0.4); }
+    .meta-team-rank-badge.rank-other { background: rgba(255, 255, 255, 0.08); color: var(--cyan-wave); border: 1px solid var(--border-highlight); }
+    .meta-team-title { font-size: 1.3rem; font-weight: 800; }
+    .meta-team-sub { font-size: 0.85rem; color: var(--text-dim); }
+    .meta-team-tier-badge {
+      font-family: var(--font-tech); font-weight: 800; font-size: 0.85rem; padding: 0.35rem 0.85rem; border-radius: 9999px; letter-spacing: 1px;
+    }
+    .tier-ex { background: rgba(245, 158, 11, 0.2); color: var(--gold-bright); border: 1px solid var(--gold-solaris); }
+    .tier-s-plus { background: rgba(192, 132, 252, 0.2); color: #c084fc; border: 1px solid #a855f7; }
+    .tier-s { background: rgba(0, 240, 255, 0.15); color: var(--cyan-wave); border: 1px solid var(--cyan-deep); }
+    .meta-team-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .meta-tag { font-family: var(--font-tech); font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05); color: var(--text-muted); border: 1px solid var(--border-color); }
+    .meta-team-members-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 1.5rem 0; }
+    .meta-member-item { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; text-align: center; transition: transform 0.2s; }
+    .meta-member-item:hover { transform: translateY(-2px); border-color: var(--cyan-wave); }
+    .meta-member-avatar { position: relative; width: 70px; height: 70px; margin: 0 auto 0.75rem; }
+    .meta-member-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid var(--cyan-wave); }
+    .meta-member-role {
+      position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%); background: var(--bg-dark);
+      border: 1px solid var(--border-highlight); font-family: var(--font-tech); font-size: 0.65rem; color: var(--cyan-wave);
+      padding: 1px 6px; border-radius: 9999px; white-space: nowrap;
+    }
+    .meta-member-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .meta-member-elem { font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-tech); }
+    .meta-synergy-box { background: rgba(0, 240, 255, 0.03); border: 1px solid rgba(0, 240, 255, 0.15); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem; }
+    .meta-synergy-title { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.9rem; color: var(--cyan-wave); margin-bottom: 0.5rem; }
+    .meta-synergy-text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+    .meta-rotation-box { background: rgba(245, 158, 11, 0.03); border: 1px solid rgba(245, 158, 11, 0.15); border-radius: 12px; padding: 1.25rem; }
+    .meta-rotation-title { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.9rem; color: var(--gold-bright); margin-bottom: 0.75rem; }
+    .meta-rotation-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .rotation-step-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem; }
+    .step-num-badge { font-family: var(--font-tech); font-size: 0.7rem; color: var(--gold-bright); font-weight: 800; margin-bottom: 0.25rem; }
+    .step-char-name { font-weight: 700; font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.35rem; }
+    .step-desc-text { font-size: 0.8rem; color: var(--text-dim); line-height: 1.45; }
+
+    /* Features */
+    .features-section { padding: 6rem 0; background: var(--bg-dark); }
+    .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .feature-card {
+      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px;
+      padding: 1.75rem 1.25rem; transition: transform 0.2s, border-color 0.2s; contain: content;
+    }
+    .feature-card:hover { transform: translateY(-4px); border-color: var(--cyan-wave); }
+    .feature-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .feature-card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .feature-card-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* Redeem */
+    .redeem-section { padding: 6rem 0; background: var(--bg-main); }
+    .redeem-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .redeem-card {
+      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px;
+      padding: 1.5rem; transition: transform 0.2s, border-color 0.2s; contain: content;
+    }
+    .redeem-card:hover { transform: translateY(-3px); border-color: var(--gold-bright); }
+    .redeem-status-tag {
+      font-family: var(--font-tech); font-size: 0.7rem; color: #34d399; background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 9999px; font-weight: 700;
+    }
+    .redeem-code-val { font-family: var(--font-tech); font-size: 1.4rem; font-weight: 800; color: var(--cyan-wave); letter-spacing: 1px; margin-bottom: 0.5rem; }
+    .redeem-rewards-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* Footer */
+    .footer { padding: 3rem 0; background: #03050a; border-top: 1px solid var(--border-color); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+
+    /* Sci-Fi Toast */
+    .sci-toast-container {
+      position: fixed; bottom: 2rem; right: 2rem; background: rgba(12, 19, 36, 0.95);
+      border: 1px solid var(--cyan-wave); border-radius: 12px; padding: 1rem 1.25rem;
+      display: flex; align-items: center; gap: 0.85rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.3);
+      z-index: 9999; transform: translateY(100px); opacity: 0; transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); max-width: 400px;
+    }
+    .sci-toast-container.show { transform: translateY(0); opacity: 1; }
+    .sci-toast-icon { font-size: 1.4rem; color: var(--cyan-wave); }
+    .sci-toast-title { font-family: var(--font-tech); font-size: 0.75rem; color: var(--cyan-wave); font-weight: 800; letter-spacing: 1px; }
+    .sci-toast-message { font-size: 0.85rem; color: var(--text-main); margin-top: 0.15rem; }
+
+    @media (max-width: 992px) {
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .resonator-showcase { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .meta-rotation-steps { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed; top: 70px; left: 0; width: 100%; background: rgba(8, 12, 23, 0.98);
+        flex-direction: column; padding: 2rem; gap: 1.25rem; border-bottom: 1px solid var(--border-color);
+        transform: translateY(-150%); transition: transform 0.3s ease;
+      }
+      .nav-links.active { transform: translateY(0); }
+      .menu-toggle { display: block; }
+      .meta-team-members-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React 18 Application Script -->
+  <script type="text/babel">
+    const { useState, useEffect, useRef, useCallback, useMemo } = React;
+
+    // --- DATA: 60 RESONATORS ---
+    const elementConfig = {
+      Spectro: { icon: '✦', label: 'แสง (Spectro)', color: '#fbbf24', bg: 'rgba(245, 158, 11, 0.15)', border: '#f59e0b', glow: 'rgba(245, 158, 11, 0.35)' },
+      Fusion: { icon: '🔥', label: 'ไฟ (Fusion)', color: '#f87171', bg: 'rgba(239, 68, 68, 0.15)', border: '#ef4444', glow: 'rgba(239, 68, 68, 0.35)' },
+      Electro: { icon: '⚡', label: 'ไฟฟ้า (Electro)', color: '#c084fc', bg: 'rgba(168, 85, 247, 0.15)', border: '#a855f7', glow: 'rgba(168, 85, 247, 0.35)' },
+      Aero: { icon: '🍃', label: 'ลม (Aero)', color: '#34d399', bg: 'rgba(16, 185, 129, 0.15)', border: '#10b981', glow: 'rgba(16, 185, 129, 0.35)' },
+      Glacio: { icon: '❄️', label: 'น้ำแข็ง (Glacio)', color: '#38bdf8', bg: 'rgba(6, 182, 212, 0.15)', border: '#06b6d4', glow: 'rgba(6, 182, 212, 0.35)' },
+      Havoc: { icon: '🌑', label: 'มืด (Havoc)', color: '#e879f9', bg: 'rgba(217, 70, 239, 0.15)', border: '#d946ef', glow: 'rgba(217, 70, 239, 0.35)' }
+    };
+
+    const allResonators = [
+      { id: "hsin", name: "Hsin", nameTh: "ซิน", rarity: 5, element: "Electro", weapon: "Rectifier", version: "TBA", thumb: "assets/characters/resonator_hsin.png" },
+      { id: "suoming", name: "Suoming", nameTh: "สั่วหมิง", rarity: 5, element: "Electro", weapon: "Sword", version: "TBA", thumb: "assets/characters/resonator_suoming.png" },
+      { id: "jingran", name: "Jingran", nameTh: "จิงหราน", rarity: 5, element: "Fusion", weapon: "Broadblade", version: "3.6", thumb: "assets/characters/resonator_jingran.png" },
+      { id: "qingxiao", name: "Qingxiao", nameTh: "ชิงเซียว", rarity: 5, element: "Aero", weapon: "Sword", version: "3.6", thumb: "assets/characters/resonator_qingxiao.png" },
+      { id: "rover_electro", name: "Rover-Electro", nameTh: "ผู้เดินทาง (ไฟฟ้า)", rarity: 5, element: "Electro", weapon: "Sword", version: "3.5", thumb: "assets/characters/resonator_rover_electro.png" },
+      { id: "suisui", name: "Suisui", nameTh: "สุ่ยสุ่ย", rarity: 5, element: "Glacio", weapon: "Rectifier", version: "3.5", thumb: "assets/characters/resonator_suisui.png" },
+      { id: "yangyang_xuanling", name: "Yangyang: Xuanling", nameTh: "หยางหยาง: เสวียนหลิง", rarity: 5, element: "Havoc", weapon: "Sword", version: "3.5", thumb: "assets/characters/resonator_yangyang_xuanling.png" },
+      { id: "lucilla", name: "Lucilla", nameTh: "ลูซิลลา", rarity: 5, element: "Glacio", weapon: "Rectifier", version: "3.4", thumb: "assets/characters/resonator_lucilla.png" },
+      { id: "lucy", name: "Lucy", nameTh: "ลูซี่", rarity: 5, element: "Spectro", weapon: "Pistols", version: "3.4", thumb: "assets/characters/resonator_lucy.png" },
+      { id: "rebecca", name: "Rebecca", nameTh: "รีเบคกา", rarity: 5, element: "Electro", weapon: "Pistols", version: "3.4", thumb: "assets/characters/resonator_rebecca.png" },
+      { id: "denia", name: "Denia", nameTh: "เดเนีย", rarity: 5, element: "Fusion", weapon: "Rectifier", version: "3.3", thumb: "assets/characters/resonator_denia.png" },
+      { id: "hiyuki", name: "Hiyuki", nameTh: "ฮิยูกิ", rarity: 5, element: "Glacio", weapon: "Sword", version: "3.3", thumb: "assets/characters/resonator_hiyuki.png" },
+      { id: "sigrika", name: "Sigrika", nameTh: "ซิกริกา", rarity: 5, element: "Aero", weapon: "Gauntlets", version: "3.2", thumb: "assets/characters/resonator_sigrika.png" },
+      { id: "aemeath", name: "Aemeath", nameTh: "เอมิธ", rarity: 5, element: "Fusion", weapon: "Sword", version: "3.1", thumb: "assets/characters/resonator_aemeath.png" },
+      { id: "luuk_herssen", name: "Luuk Herssen", nameTh: "ลุค เฮอร์เซน", rarity: 5, element: "Spectro", weapon: "Gauntlets", version: "3.1", thumb: "assets/characters/resonator_luuk_herssen.png" },
+      { id: "lynae", name: "Lynae", nameTh: "ไลนี", rarity: 5, element: "Spectro", weapon: "Pistols", version: "3.0", thumb: "assets/characters/resonator_lynae.png" },
+      { id: "mornye", name: "Mornye", nameTh: "มอร์นี", rarity: 5, element: "Fusion", weapon: "Broadblade", version: "3.0", thumb: "assets/characters/resonator_mornye.png" },
+      { id: "chisa", name: "Chisa", nameTh: "ชิสะ", rarity: 5, element: "Havoc", weapon: "Broadblade", version: "2.8", thumb: "assets/characters/resonator_chisa.png" },
+      { id: "buling", name: "Buling", nameTh: "ปู้หลิง", rarity: 4, element: "Electro", weapon: "Rectifier", version: "2.8", thumb: "assets/characters/resonator_buling.png" },
+      { id: "galbrena", name: "Galbrena", nameTh: "กัลเบรนา", rarity: 5, element: "Fusion", weapon: "Pistols", version: "2.7", thumb: "assets/characters/resonator_galbrena.png" },
+      { id: "qiuyuan", name: "Qiuyuan", nameTh: "ชิวหยวน", rarity: 5, element: "Aero", weapon: "Sword", version: "2.7", thumb: "assets/characters/resonator_qiuyuan.png" },
+      { id: "augusta", name: "Augusta", nameTh: "ออกัสตา", rarity: 5, element: "Electro", weapon: "Broadblade", version: "2.6", thumb: "assets/characters/resonator_augusta.png" },
+      { id: "iuno", name: "Iuno", nameTh: "จูโน", rarity: 5, element: "Aero", weapon: "Gauntlets", version: "2.6", thumb: "assets/characters/resonator_iuno.png" },
+      { id: "phrolova", name: "Phrolova", nameTh: "โฟรโลวา", rarity: 5, element: "Havoc", weapon: "Rectifier", version: "2.5", thumb: "assets/characters/resonator_phrolova.png" },
+      { id: "cartethyia", name: "Cartethyia", nameTh: "คาร์เทเธีย", rarity: 5, element: "Aero", weapon: "Sword", version: "2.4", thumb: "assets/characters/resonator_cartethyia.png" },
+      { id: "lupa", name: "Lupa", nameTh: "ลูปา", rarity: 5, element: "Fusion", weapon: "Broadblade", version: "2.4", thumb: "assets/characters/resonator_lupa.png" },
+      { id: "ciaccona", name: "Ciaccona", nameTh: "ชาโคนา", rarity: 5, element: "Aero", weapon: "Pistols", version: "2.3", thumb: "assets/characters/resonator_ciaccona.png" },
+      { id: "zani", name: "Zani", nameTh: "ซานี่", rarity: 5, element: "Spectro", weapon: "Gauntlets", version: "2.3", thumb: "assets/characters/resonator_zani.png" },
+      { id: "cantarella", name: "Cantarella", nameTh: "คานทาเรลลา", rarity: 5, element: "Havoc", weapon: "Rectifier", version: "2.2", thumb: "assets/characters/resonator_cantarella.png" },
+      { id: "rover_aero", name: "Rover-Aero", nameTh: "ผู้เดินทาง (ลม)", rarity: 5, element: "Aero", weapon: "Sword", version: "2.2", thumb: "assets/characters/resonator_rover_aero.png" },
+      { id: "brant", name: "Brant", nameTh: "แบรนต์", rarity: 5, element: "Fusion", weapon: "Sword", version: "2.1", thumb: "assets/characters/resonator_brant.png" },
+      { id: "phoebe", name: "Phoebe", nameTh: "ฟีบี้", rarity: 5, element: "Spectro", weapon: "Rectifier", version: "2.1", thumb: "assets/characters/resonator_phoebe.png" },
+      { id: "carlotta", name: "Carlotta", nameTh: "คาร์ล็อตต้า", rarity: 5, element: "Glacio", weapon: "Pistols", version: "2.0", thumb: "assets/characters/resonator_carlotta.png" },
+      { id: "roccia", name: "Roccia", nameTh: "รอคเชีย", rarity: 5, element: "Havoc", weapon: "Gauntlets", version: "2.0", thumb: "assets/characters/resonator_roccia.png" },
+      { id: "camellya", name: "Camellya", nameTh: "คาเมลเลีย", rarity: 5, element: "Havoc", weapon: "Sword", version: "1.4", thumb: "assets/characters/resonator_camellya.png" },
+      { id: "lumi", name: "Lumi", nameTh: "ลูมิ", rarity: 4, element: "Electro", weapon: "Broadblade", version: "1.4", thumb: "assets/characters/resonator_lumi.png" },
+      { id: "shorekeeper", name: "Shorekeeper", nameTh: "ชอร์คีปเปอร์", rarity: 5, element: "Spectro", weapon: "Rectifier", version: "1.3", thumb: "assets/characters/resonator_shorekeeper.png" },
+      { id: "youhu", name: "Youhu", nameTh: "โย่วหู", rarity: 4, element: "Glacio", weapon: "Gauntlets", version: "1.3", thumb: "assets/characters/resonator_youhu.png" },
+      { id: "xiangli_yao", name: "Xiangli Yao", nameTh: "เซียงลี่ เหยา", rarity: 5, element: "Electro", weapon: "Gauntlets", version: "1.2", thumb: "assets/characters/resonator_xiangli_yao.png" },
+      { id: "zhezhi", name: "Zhezhi", nameTh: "เจ๋อจือ", rarity: 5, element: "Glacio", weapon: "Rectifier", version: "1.2", thumb: "assets/characters/resonator_zhezhi.png" },
+      { id: "changli", name: "Changli", nameTh: "ฉางลี่", rarity: 5, element: "Fusion", weapon: "Sword", version: "1.1", thumb: "assets/characters/resonator_changli.png" },
+      { id: "jinhsi", name: "Jinhsi", nameTh: "จินซี", rarity: 5, element: "Spectro", weapon: "Broadblade", version: "1.1", thumb: "assets/characters/resonator_jinhsi.png" },
+      { id: "calcharo", name: "Calcharo", nameTh: "คัลชาโร", rarity: 5, element: "Electro", weapon: "Broadblade", version: "1.0", thumb: "assets/characters/resonator_calcharo.png" },
+      { id: "encore", name: "Encore", nameTh: "อังกอร์", rarity: 5, element: "Fusion", weapon: "Rectifier", version: "1.0", thumb: "assets/characters/resonator_encore.png" },
+      { id: "jianxin", name: "Jianxin", nameTh: "เจี้ยนซิน", rarity: 5, element: "Aero", weapon: "Gauntlets", version: "1.0", thumb: "assets/characters/resonator_jianxin.png" },
+      { id: "jiyan", name: "Jiyan", nameTh: "จี้เหยียน", rarity: 5, element: "Aero", weapon: "Broadblade", version: "1.0", thumb: "assets/characters/resonator_jiyan.png" },
+      { id: "lingyang", name: "Lingyang", nameTh: "หลิงหยาง", rarity: 5, element: "Glacio", weapon: "Gauntlets", version: "1.0", thumb: "assets/characters/resonator_lingyang.png" },
+      { id: "rover_havoc", name: "Rover-Havoc", nameTh: "ผู้เดินทาง (มืด)", rarity: 5, element: "Havoc", weapon: "Sword", version: "1.0", thumb: "assets/characters/resonator_rover_havoc.png" },
+      { id: "rover_spectro", name: "Rover-Spectro", nameTh: "ผู้เดินทาง (แสง)", rarity: 5, element: "Spectro", weapon: "Sword", version: "1.0", thumb: "assets/characters/resonator_rover_spectro.png" },
+      { id: "verina", name: "Verina", nameTh: "เวริน่า", rarity: 5, element: "Spectro", weapon: "Rectifier", version: "1.0", thumb: "assets/characters/resonator_verina.png" },
+      { id: "yinlin", name: "Yinlin", nameTh: "หยินหลิน", rarity: 5, element: "Electro", weapon: "Rectifier", version: "1.0", thumb: "assets/characters/resonator_yinlin.png" },
+      { id: "aalto", name: "Aalto", nameTh: "อัลโต", rarity: 4, element: "Aero", weapon: "Pistols", version: "1.0", thumb: "assets/characters/resonator_aalto.png" },
+      { id: "baizhi", name: "Baizhi", nameTh: "ไป๋จื่อ", rarity: 4, element: "Glacio", weapon: "Rectifier", version: "1.0", thumb: "assets/characters/resonator_baizhi.png" },
+      { id: "chixia", name: "Chixia", nameTh: "ชือเสีย", rarity: 4, element: "Fusion", weapon: "Pistols", version: "1.0", thumb: "assets/characters/resonator_chixia.png" },
+      { id: "danjin", name: "Danjin", nameTh: "ตันจิน", rarity: 4, element: "Havoc", weapon: "Sword", version: "1.0", thumb: "assets/characters/resonator_danjin.png" },
+      { id: "mortefi", name: "Mortefi", nameTh: "มอร์เตฟี่", rarity: 4, element: "Fusion", weapon: "Pistols", version: "1.0", thumb: "assets/characters/resonator_mortefi.png" },
+      { id: "sanhua", name: "Sanhua", nameTh: "ซานหัว", rarity: 4, element: "Glacio", weapon: "Sword", version: "1.0", thumb: "assets/characters/resonator_sanhua.png" },
+      { id: "taoqi", name: "Taoqi", nameTh: "เถาฉี", rarity: 4, element: "Havoc", weapon: "Broadblade", version: "1.0", thumb: "assets/characters/resonator_taoqi.png" },
+      { id: "yangyang", name: "Yangyang", nameTh: "หยางหยาง", rarity: 4, element: "Aero", weapon: "Sword", version: "1.0", thumb: "assets/characters/resonator_yangyang.png" },
+      { id: "yuanwu", name: "Yuanwu", nameTh: "หยวนหวู่", rarity: 4, element: "Electro", weapon: "Gauntlets", version: "1.0", thumb: "assets/characters/resonator_yuanwu.png" }
+    ];
+
+    // --- DATA: 10 META TEAMS ---
+    const metaTeams = [
+      {
+        rank: 1, tier: "EX", name: "Celestial Dragon & Frost Brush Burst", nameTh: "ทีมมังกรสุริยะ & พู่กันน้ำแข็งสังหารเทพ",
+        highlight: "ดาเมจระเบิดมังกรสูงสุดในเกม 400,000+ ดอกเดียวบอสละลาย",
+        tags: ["EX Tier", "Burst DMG", "Dragon Gauge", "Single Target God"],
+        members: [
+          { id: "jinhsi", name: "Jinhsi", role: "Main DPS", element: "Spectro", weapon: "Broadblade", thumb: "assets/characters/resonator_jinhsi.png" },
+          { id: "zhezhi", name: "Zhezhi", role: "Sub DPS", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_zhezhi.png" },
+          { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
+        ],
+        synergy: "Jinhsi ต้องการการโจมตีประสานต่างธาตุเพื่อสะสมเกจมังกร 50 แต้ม Zhezhi โจมตีประสานน้ำแข็งรัวสุด + Outro บัฟสกิล 25% เสริมด้วย Shorekeeper บัฟ CRIT Rate 12.5% และ CRIT DMG 25% ดอกเดียวบอสละลาย",
+        rotation: [
+          { step: 1, char: "Shorekeeper", desc: "เปิด Intro -> กาง Stellar Realm ฟูลฮีล -> ใช้ Echo Fallacy of No Return -> ส่ง Outro Buff ให้ Zhezhi" },
+          { step: 2, char: "Zhezhi", desc: "ฟาดพู่กันปล่อยนกกระเรียนน้ำแข็งโจมตีประสาน -> กางม่านหมึกอัลติ -> ส่ง Outro Skill DMG +25% ให้ Jinhsi" },
+          { step: 3, char: "Jinhsi", desc: "รับบัฟเต็มพิกัด -> สกิล E พุ่งบินขึ้นฟ้า -> สาดเลเซอร์ Illuminous Dragon Breath ระเบิดเกจ 50 หลอด ดาเมจ 400,000+!" }
+        ]
+      },
+      {
+        rank: 2, tier: "EX", name: "Crimson Blossom Havoc Hypercarry", nameTh: "ทีมจักรพรรดินีดอกไม้เลือด คาเมลเลียสับแหลก",
+        highlight: "จักรพรรดินีแห่ง Tower of Adversity เคลียร์ห้องบอสไวที่สุดในเกม",
+        tags: ["EX Tier", "Basic Attack Hypercarry", "Fastest Concerto", "ToA Queen"],
+        members: [
+          { id: "camellya", name: "Camellya", role: "Main DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_camellya.png" },
+          { id: "sanhua", name: "Sanhua", role: "Sub DPS", element: "Glacio", weapon: "Sword", thumb: "assets/characters/resonator_sanhua.png" },
+          { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
+        ],
+        synergy: "ท่าเถาวัลย์ Blossom Swirl ของ Camellya นับเป็น Basic Attack ทั้งหมด ซึ่ง Sanhua บัฟ Basic Attack ถึง 38% แถมทำ Concerto ไวสุดใน 3 วินาที เคลียร์ห้องบอสไวที่สุดในแพตช์ปัจจุบัน",
+        rotation: [
+          { step: 1, char: "Shorekeeper", desc: "เปิดโดม Stellar Realm บัฟคริติคอลและฮีล -> ส่งต่อให้ Sanhua" },
+          { step: 2, char: "Sanhua", desc: "กดยกพื้นน้ำแข็ง -> ชาร์จเกจเสี้ยววินาทีระเบิดแท่งน้ำแข็ง -> ส่ง Outro บัฟ Basic Attack +38% ให้ Camellya" },
+          { step: 3, char: "Camellya", desc: "เข้าสู่สถานะ Crimson Blossom -> หมุนฟันเถาวัลย์ระห่ำกลางอากาศ -> ปล่อยอัลติระเบิดดอกไม้สีเลือดบอสสลาย" }
+        ]
+      },
+      {
+        rank: 3, tier: "S+", name: "Blazing Phoenix Dual Quickswap", nameTh: "ทีมเพลิงคู่วิหคเพลิง สลับฟันไร้คูลดาวน์",
+        highlight: "ดาเมจต่อวินาที (DPS) พุ่งทะลุเพดานด้วยเมคานิกส์ Quickswap ไร้รอยต่อ",
+        tags: ["S+ Tier", "Dual Quickswap", "Fusion Resonance", "Zero Downtime"],
+        members: [
+          { id: "changli", name: "Changli", role: "Main / Quickswap", element: "Fusion", weapon: "Sword", thumb: "assets/characters/resonator_changli.png" },
+          { id: "encore", name: "Encore", role: "Main / Quickswap", element: "Fusion", weapon: "Rectifier", thumb: "assets/characters/resonator_encore.png" },
+          { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
+        ],
+        synergy: "Outro ของ Changli บัฟ Fusion 20% + Liberation 25% ให้ Encore เต็ม 100% กดยกเลิกอนิเมชันของกันและกัน สลับตัวรัวสกิลต่อเนื่อง ดาเมจต่อวินาที (DPS) พุ่งทะลุเพดาน",
+        rotation: [
+          { step: 1, char: "Shorekeeper", desc: "บัฟคริติคอลและฮีลทั้งทีมด้วย Stellar Realm" },
+          { step: 2, char: "Changli", desc: "เก็บเกจขนนก True Sight -> ฟันนกฟีนิกซ์เปลวเพลิง -> ส่ง Outro บัฟ Fusion + Liberation ให้ Encore" },
+          { step: 3, char: "Encore", desc: "แปลงร่าง Cosmos Rave ทุบรัวๆ -> สลับกลับ Changli ทันทีเพื่อแคนเซิลท่า ดาเมจไม่ขาดตอนแม้แต่วินาทีเดียว" }
+        ]
+      },
+      {
+        rank: 4, tier: "S+", name: "Qingloong Wind Dragon Tempest", nameTh: "ทีมมังกรพายุเขียว กวาดล้างทั้งเวที",
+        highlight: "กวาดล้างมอนสเตอร์เป็นกลุ่มและบอสตัวใหญ่ด้วยพลัง Heavy Attack",
+        tags: ["S+ Tier", "Heavy Attack God", "AoE Crowd Control", "Dragon Lance"],
+        members: [
+          { id: "jiyan", name: "Jiyan", role: "Main DPS", element: "Aero", weapon: "Broadblade", thumb: "assets/characters/resonator_jiyan.png" },
+          { id: "mortefi", name: "Mortefi", role: "Sub DPS", element: "Fusion", weapon: "Pistols", thumb: "assets/characters/resonator_mortefi.png" },
+          { id: "verina", name: "Verina", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_verina.png" }
+        ],
+        synergy: "ท่าไม้ตายมังกรเขียวของ Jiyan นับเป็น Heavy Attack 100% ซึ่ง Mortefi มอบบัฟ Heavy Attack สูงถึง 38% สูงที่สุดในเกม มอนสเตอร์ทั้งห้องโดนลมดูดและสับแหลก",
+        rotation: [
+          { step: 1, char: "Verina", desc: "สกิลกระโดดแจกบัฟ ATK 20% + All-DMG Deepen 15% พร้อมบัฟเกราะกุหลาบ" },
+          { step: 2, char: "Mortefi", desc: "สกิลเป่ามังกรเพลิงอัลติประสาน -> ส่ง Outro Heavy Attack Deepen +38% ให้ Jiyan" },
+          { step: 3, char: "Jiyan", desc: "ปลดปล่อย Qingloong Mode พุ่งควงหอกมังกรกระหน่ำดูดมอนสเตอร์ทั้งเวที ดาเมจเหลืองอร่ามทั้งจอ" }
+        ]
+      },
+      {
+        rank: 5, tier: "S+", name: "Cybernetic Electro Liberation", nameTh: "ทีมหมัดจักรกลสายฟ้า เลเซอร์ถล่มบอส",
+        highlight: "คอมโบสายฟ้าล้วน บัฟ Resonance Liberation ตรงสาย หมัดคริหลักหมื่น",
+        tags: ["S+ Tier", "Resonance Liberation", "Electro Puppetry", "Laser Burst"],
+        members: [
+          { id: "xiangli_yao", name: "Xiangli Yao", role: "Main DPS", element: "Electro", weapon: "Gauntlets", thumb: "assets/characters/resonator_xiangli_yao.png" },
+          { id: "yinlin", name: "Yinlin", role: "Sub DPS", element: "Electro", weapon: "Rectifier", thumb: "assets/characters/resonator_yinlin.png" },
+          { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
+        ],
+        synergy: "โหมด Cogitation Matrix ของ Xiangli Yao ได้รับผลจาก Outro ของ Yinlin ที่มอบบัฟ Electro 20% + Liberation 25% ตรงสายเต็มๆ หมัดเลเซอร์ติดคริหลักหมื่นทุกฮิต",
+        rotation: [
+          { step: 1, char: "Shorekeeper", desc: "กางม่าน Stellar Realm มอบบัฟ CRIT Rate 12.5% และ CRIT DMG 25%" },
+          { step: 2, char: "Yinlin", desc: "เรียกหุ่นเชิด Zapstring ฟาดสายฟ้ากักขังศัตรู -> ส่ง Outro Electro + Liberation ให้ Xiangli Yao" },
+          { step: 3, char: "Xiangli Yao", desc: "เปิดโดมคำนวณลูกเต๋าจักรกล -> ปล่อยอัลติหมัดเลเซอร์ทุบลงพื้นรัว 3 สเต็ปติดคริติคอลกระจาย" }
+        ]
+      },
+      {
+        rank: 6, tier: "S+", name: "Glacio Absolute Zero Precision", nameTh: "ทีมสไนเปอร์เยือกแข็งศูนย์สัมบูรณ์",
+        highlight: "โจมตีระยะไกล เจาะเกราะเยือกแข็ง ปลอดภัยและรุนแรง",
+        tags: ["S+ Tier", "Glacio Resonance", "Sniper Precision", "Safe Distance"],
+        members: [
+          { id: "carlotta", name: "Carlotta", role: "Main DPS", element: "Glacio", weapon: "Pistols", thumb: "assets/characters/resonator_carlotta.png" },
+          { id: "zhezhi", name: "Zhezhi", role: "Sub DPS", element: "Glacio", weapon: "Rectifier", thumb: "assets/characters/resonator_zhezhi.png" },
+          { id: "shorekeeper", name: "Shorekeeper", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_shorekeeper.png" }
+        ],
+        synergy: "Carlotta ยิงสไนเปอร์น้ำแข็งระยะไกลประสานงานกับ Zhezhi ที่มอบบัฟ Glacio 20% + Skill 25% และ Shorekeeper บัฟคริติคอล ทำให้กระสุนน้ำแข็งเจาะเกราะบอสได้อย่างแม่นยำและปลอดภัย",
+        rotation: [
+          { step: 1, char: "Shorekeeper", desc: "กางม่านบัฟพลังดาวและอัตราคริติคอล" },
+          { step: 2, char: "Zhezhi", desc: "สาดพู่กันน้ำแข็งสร้างนกช่วยยิง + บัฟ Glacio และ Skill DMG" },
+          { step: 3, char: "Carlotta", desc: "ล็อคเป้าชาร์จสไนเปอร์เยือกแข็งยิงเจาะหัวศัตรูจากระยะปลอดภัย ตัวเลขเด้งรัวๆ" }
+        ]
+      },
+      {
+        rank: 7, tier: "S", name: "F2P Dark Scythe Havoc King", nameTh: "ทีมเคียวมฤตยู F2P ขวัญใจมหาชน",
+        highlight: "ทีมฟรีที่ดาเมจเทียบเท่าตัว 5 ดาวลิมิเต็ด ปั้นง่ายเล่นสนุกสะใจ",
+        tags: ["S Tier", "F2P Friendly", "Dark Scythe", "Havoc Deepen +23%"],
+        members: [
+          { id: "rover_havoc", name: "Rover-Havoc", role: "Main DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_rover_havoc.png" },
+          { id: "danjin", name: "Danjin", role: "Sub DPS", element: "Havoc", weapon: "Sword", thumb: "assets/characters/resonator_danjin.png" },
+          { id: "verina", name: "Verina", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_verina.png" }
+        ],
+        synergy: "Danjin มอบ Outro บัฟ Havoc Deepen 23% ให้ Havoc Rover ปลดปล่อยพลัง Dark Surge สับเคียวมืดและทุบอัลติ Dead Trance ดาเมจทะลุหลักแสน",
+        rotation: [
+          { step: 1, char: "Verina", desc: "สกิลและอัลติบัฟพลังโจมตีและฮีลอย่างรวดเร็ว" },
+          { step: 2, char: "Danjin", desc: "สับเลือดตัวเองสะสมเกจ Chaos -> ฟันอัลติเลือดสาด -> ส่ง Outro Havoc +23% ให้ Rover" },
+          { step: 3, char: "Rover-Havoc", desc: "เข้าสู่ร่างมืด Dark Surge ควงเคียวยมทูตสับต่อเนื่อง 5 ฮิต -> ปิดฉากด้วย Dead Trance ทุบพื้นแตก" }
+        ]
+      },
+      {
+        rank: 8, tier: "S", name: "Death Messenger Electro Assault", nameTh: "ทีมยมทูตสายฟ้า ฟันสะบั้นสุดโหด",
+        highlight: "เกมเพลย์ฮาร์ดคอร์ ฟันคลื่นดาบต่อเนื่อง Death Messenger อลังการ",
+        tags: ["S Tier", "Electro Slasher", "Phantom Etching", "High Skill Ceiling"],
+        members: [
+          { id: "calcharo", name: "Calcharo", role: "Main DPS", element: "Electro", weapon: "Broadblade", thumb: "assets/characters/resonator_calcharo.png" },
+          { id: "yinlin", name: "Yinlin", role: "Sub DPS", element: "Electro", weapon: "Rectifier", thumb: "assets/characters/resonator_yinlin.png" },
+          { id: "verina", name: "Verina", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_verina.png" }
+        ],
+        synergy: "Calcharo ในร่าง Phantom Etching รับบัฟ Electro 20% + Liberation 25% จาก Yinlin ฟันคลื่นดาบสายฟ้าและท่า Death Messenger ต่อเนื่องสะใจสายฮาร์ดคอร์",
+        rotation: [
+          { step: 1, char: "Verina", desc: "บัฟ ATK & ฮีลทีมเต็มพิกัด" },
+          { step: 2, char: "Yinlin", desc: "ร่ายสายฟ้าทำเครื่องหมาย Sinister Dappling -> ส่ง Outro บัฟสายฟ้าให้ Calcharo" },
+          { step: 3, char: "Calcharo", desc: "สวมร่างเงาปีศาจ ฟันชุดคอมโบ 3 รอบ -> รวบพลัง Death Messenger ฟาดคลื่นสายฟ้ายักษ์" }
+        ]
+      },
+      {
+        rank: 9, tier: "S", name: "Rapid Woolies Fusion Hypercarry", nameTh: "ทีมน้องแกะเพลิง ทุบแหลกไร้ความปรานี",
+        highlight: "ทางเลือก F2P สุดคุ้มค่า เล่นง่าย คล่องตัว สกิลระเบิดทั้งจอ",
+        tags: ["S Tier", "Budget Friendly", "Basic ATK Buff", "Puppet Frenzy"],
+        members: [
+          { id: "encore", name: "Encore", role: "Main DPS", element: "Fusion", weapon: "Rectifier", thumb: "assets/characters/resonator_encore.png" },
+          { id: "sanhua", name: "Sanhua", role: "Sub DPS", element: "Glacio", weapon: "Sword", thumb: "assets/characters/resonator_sanhua.png" },
+          { id: "verina", name: "Verina", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_verina.png" }
+        ],
+        synergy: "โหมด Cosmos Rave ของ Encore การโจมตีทั้งหมดนับเป็น Basic Attack การจับคู่กับ Sanhua (บัฟ Basic Attack +38%) ทำให้เป็นทีมที่ปั้นง่าย เล่นคล่อง และดาเมจสูง",
+        rotation: [
+          { step: 1, char: "Verina", desc: "กางบัฟ ATK 20% และบัฟกุหลาบเร่งเกจ" },
+          { step: 2, char: "Sanhua", desc: "ชาร์จเกจเสี้ยวน้ำแข็ง 3 วินาที -> ส่ง Outro Basic Attack +38% ให้ Encore" },
+          { step: 3, char: "Encore", desc: "ปลดปล่อยร่าง Cosmos Rave กระโดดขี่ตุ๊กตาแกะไฟทุบพื้นเป็นลาวาระเบิดรัวๆ" }
+        ]
+      },
+      {
+        rank: 10, tier: "S", name: "Dual Fusion Gatling Bullet Burst", nameTh: "ทีมปืนคู่เพลิงนรก กราดยิงกระสุน 30 นัด",
+        highlight: "กระหน่ำยิงบอสเป้าหมายเดี่ยวหลอดเลือดละลายฮวบด้วย Boom Dance",
+        tags: ["S Tier", "Gatling Fire", "Fusion Synergy", "Rapid Fire"],
+        members: [
+          { id: "chixia", name: "Chixia", role: "Main DPS", element: "Fusion", weapon: "Pistols", thumb: "assets/characters/resonator_chixia.png" },
+          { id: "changli", name: "Changli", role: "Sub DPS", element: "Fusion", weapon: "Sword", thumb: "assets/characters/resonator_changli.png" },
+          { id: "verina", name: "Verina", role: "Support", element: "Spectro", weapon: "Rectifier", thumb: "assets/characters/resonator_verina.png" }
+        ],
+        synergy: "Chixia ชาร์จกระสุน 30 นัด กราดยิงสกิล Boom Dance ทะลวงบอส พร้อมรับบัฟ Fusion Deepen 20% จาก Changli และบัฟพลังโจมตีจาก Verina หลอดเลือดบอสละลายฮวบ",
+        rotation: [
+          { step: 1, char: "Verina", desc: "บัฟพลังโจมตีและฮีลทั้งทีม" },
+          { step: 2, char: "Changli", desc: "ฟันเฟิ่งหวงเปลวเพลิงสร้างเปลวไฟ -> ส่ง Outro Fusion +20% ให้ Chixia" },
+          { step: 3, char: "Chixia", desc: "สาดกระสุนปืนคู่ Boom Dance 30 นัดรัวต่อเนื่อง -> จบด้วยกระสุนระเบิด Blazing Fireworks" }
+        ]
+      }
+    ];
+
+    const redeemCodes = [
+      { code: "WUTHERINGGIFT", status: "Active", rewards: "50x Astrite, 2x Premium Resonance Potion, 2x Medium Revival Inhaler", expiry: "ถาวรสำหรับผู้เล่นใหม่ (Permanent)" },
+      { code: "SOLARIS2026", status: "Active", rewards: "100x Astrite, 50,000 Shell Credits, 3x Advanced Energy Core", expiry: "จำกัดเวลา (Time-limited)" },
+      { code: "BLACKSHORES", status: "Active", rewards: "80x Astrite, 5x Medium Energy Core, 10x Shell Credits", expiry: "จำกัดเวลา (Time-limited)" },
+      { code: "RESONANCEWAVES", status: "Active", rewards: "60x Astrite, 3x Energy Core, 15,000 Shell Credits", expiry: "จำกัดเวลา (Time-limited)" },
+      { code: "ECHOESOFPAST", status: "Active", rewards: "50x Astrite, 10,000 Shell Credits, 2x Medium Potion", expiry: "จำกัดเวลา (Time-limited)" }
+    ];
+
+    // --- MAIN APP COMPONENT ---
+    function App() {
+      const [soundEnabled, setSoundEnabled] = useState(true);
+      const [perfMode, setPerfMode] = useState(false);
+      const [toast, setToast] = useState(null);
+      const audioCtxRef = useRef(null);
+
+      const getAudioContext = useCallback(() => {
+        if (!audioCtxRef.current) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) audioCtxRef.current = new AudioCtx();
+        }
+        if (audioCtxRef.current && audioCtxRef.current.state === 'suspended') {
+          audioCtxRef.current.resume();
+        }
+        return audioCtxRef.current;
+      }, []);
+
+      const playTone = useCallback((freq = 520, type = 'sine', duration = 0.12) => {
+        if (!soundEnabled) return;
+        try {
+          const ctx = getAudioContext();
+          if (!ctx) return;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, ctx.currentTime);
+          gain.gain.setValueAtTime(0.08, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start();
+          osc.stop(ctx.currentTime + duration);
+        } catch(e) {}
+      }, [soundEnabled, getAudioContext]);
+
+      const playChime = useCallback(() => {
+        if (!soundEnabled) return;
+        try {
+          const ctx = getAudioContext();
+          if (!ctx) return;
+          const now = ctx.currentTime;
+          [587.33, 880, 1174.66].forEach((freq, idx) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+            gain.gain.setValueAtTime(0.06, now + idx * 0.08);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.08 + 0.18);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + idx * 0.08);
+            osc.stop(now + idx * 0.08 + 0.18);
+          });
+        } catch(e) {}
+      }, [soundEnabled, getAudioContext]);
+
+      const showToast = useCallback((msg) => {
+        setToast(msg);
+        setTimeout(() => setToast(null), 3200);
+      }, []);
+
+      // Canvas Particle
+      const canvasRef = useRef(null);
+      useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        let animId;
+        let w = (canvas.width = window.innerWidth);
+        let h = (canvas.height = window.innerHeight);
+        const onResize = () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; };
+        window.addEventListener('resize', onResize);
+
+        const count = perfMode ? 15 : 45;
+        const particles = [];
+        const colors = ['#00f0ff', '#ffd700', '#c084fc', '#ffffff'];
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: Math.random() * w, y: Math.random() * h,
+            r: Math.random() * 2 + 1, color: colors[Math.floor(Math.random() * colors.length)],
+            vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+            alpha: Math.random() * 0.5 + 0.2
+          });
+        }
+
+        const loop = () => {
+          ctx.clearRect(0, 0, w, h);
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < 0) p.x = w; if (p.x > w) p.x = 0;
+            if (p.y < 0) p.y = h; if (p.y > h) p.y = 0;
+
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.alpha * 0.35;
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 2.2, 0, Math.PI * 2); ctx.fill();
+
+            ctx.globalAlpha = p.alpha;
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+          }
+          animId = requestAnimationFrame(loop);
+        };
+        loop();
+        return () => { window.removeEventListener('resize', onResize); cancelAnimationFrame(animId); };
+      }, [perfMode]);
+
+      // Roster filtering
+      const [elemFilter, setElemFilter] = useState('all');
+      const [rarityFilter, setRarityFilter] = useState('all');
+      const [searchQuery, setSearchQuery] = useState('');
+
+      const filteredResonators = useMemo(() => {
+        return allResonators.filter(char => {
+          const matchElem = elemFilter === 'all' || char.element === elemFilter;
+          const matchRarity = rarityFilter === 'all' || String(char.rarity) === rarityFilter;
+          const q = searchQuery.trim().toLowerCase();
+          const matchSearch = !q || char.name.toLowerCase().includes(q) || char.nameTh.toLowerCase().includes(q) || char.weapon.toLowerCase().includes(q) || (char.version && char.version.toLowerCase().includes(q));
+          return matchElem && matchRarity && matchSearch;
+        });
+      }, [elemFilter, rarityFilter, searchQuery]);
+
+      // Teams filtering
+      const [teamTier, setTeamTier] = useState('all');
+      const filteredTeams = useMemo(() => {
+        if (teamTier === 'all') return metaTeams;
+        return metaTeams.filter(t => t.tier === teamTier);
+      }, [teamTier]);
+
+      // Showcase tab
+      const [showcaseChar, setShowcaseChar] = useState(allResonators.find(c => c.id === 'jinhsi') || allResonators[0]);
+
+      const handleSelectRosterCard = (char) => {
+        playTone(580);
+        const featured = allResonators.find(c => c.id === char.id);
+        if (featured) {
+          setShowcaseChar(featured);
+          const elem = document.getElementById('resonators');
+          if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+          showToast(`✦ กำลังดูข้อมูลเชิงลึก: ${char.name} (${char.nameTh})`);
+        } else {
+          showToast(`✦ ${char.name} (${char.nameTh}) • ธาตุ ${char.element} • อาวุธ ${char.weapon} (v${char.version})`);
+        }
+      };
+
+      const copyCode = (code) => {
+        if (navigator.clipboard) navigator.clipboard.writeText(code);
+        playChime();
+        showToast(`✓ คัดลอกโค้ด "${code}" เรียบร้อยแล้ว!`);
+      };
+
+      return (
+        <div>
+          <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 0, opacity: perfMode ? 0.4 : 0.8 }} />
+
+          {/* Navbar */}
+          <header className="navbar">
+            <div className="container nav-inner">
+              <a href="#" className="nav-logo" onClick={() => playTone(520)}>
+                <div className="logo-emblem">✦</div>
+                <div>
+                  <div className="logo-title">WUTHERING WAVES</div>
+                  <div className="logo-sub">REACT 18 EDITION</div>
+                </div>
+              </a>
+
+              <ul className="nav-links">
+                <li><a href="#about" className="nav-link" onClick={() => playTone(500)}>โลกแห่งเสียงคลื่น</a></li>
+                <li><a href="#resonators" className="nav-link" onClick={() => playTone(500)}>ตัวละครเด่น</a></li>
+                <li><a href="#all-resonators" className="nav-link" onClick={() => playTone(500)}>ทุกตัวละคร (60)</a></li>
+                <li><a href="#meta-teams" className="nav-link" onClick={() => playTone(500)}>10 อันดับทีมเก่งสุด</a></li>
+                <li><a href="#features" className="nav-link" onClick={() => playTone(500)}>ระบบเกม & Echo</a></li>
+                <li><a href="#redeem" className="nav-link" onClick={() => playTone(500)}>โค้ดของขวัญ</a></li>
+              </ul>
+
+              <div className="nav-right">
+                <button
+                  className="sound-toggle-btn"
+                  onClick={() => { playTone(perfMode ? 440 : 660); setPerfMode(!perfMode); }}
+                  title="โหมดลื่นไหล / 60 FPS"
+                  style={{
+                    background: perfMode ? 'rgba(16, 185, 129, 0.25)' : 'rgba(255, 255, 255, 0.05)',
+                    borderColor: perfMode ? '#10b981' : 'var(--border-color)',
+                    color: perfMode ? '#34d399' : 'var(--text-muted)'
+                  }}
+                >
+                  ⚡
+                </button>
+
+                <button className="sound-toggle-btn" onClick={() => setSoundEnabled(!soundEnabled)} title="เปิด/ปิดเสียง">
+                  {soundEnabled ? "🔊" : "🔇"}
+                </button>
+
+                <a href="https://wutheringwaves.kurogames.com/" target="_blank" className="btn btn-gold" style={{ padding: '0.65rem 1.25rem' }}>
+                  ดาวน์โหลดเกม
+                </a>
+              </div>
+            </div>
+          </header>
+
+          {/* Hero */}
+          <section className="hero" id="hero">
+            <div className="hero-glow-sphere"></div>
+            <div className="container hero-content">
+              <div className="hero-tag">
+                <span className="hero-tag-pulse"></span>
+                <span>✦ SOLARIS-3 • OFFICIAL REACT GUIDE & ENCYCLOPEDIA ✦</span>
+              </div>
+              <h1 className="hero-title">
+                ตื่นขึ้นสู่โลกแห่ง <br />
+                <span className="gold-text">เสียงคลื่น</span> และ <span className="cyan-gradient-text">การกำทอน</span>
+              </h1>
+              <p className="hero-desc">
+                สารานุกรมรวมข้อมูลตัวละครครบทุกเวอร์ชันใน <strong>Wuthering Waves</strong> (เวอร์ชัน 1.0 ถึง 3.6 และตัวละครล่าสุด) ทั้งหมด 60 Resonators พร้อมบทวิเคราะห์ 10 อันดับทีมที่เก่งที่สุด พัฒนาด้วย React
+              </p>
+              <div className="hero-actions">
+                <a href="#all-resonators" className="btn btn-gold" onClick={() => playTone(560)}>
+                  ✦ สำรวจสารานุกรม 60 ตัวละคร
+                </a>
+                <a href="#meta-teams" className="btn btn-outline" onClick={() => playTone(560)}>
+                  🏆 ดู 10 อันดับทีมเก่งที่สุด
+                </a>
+                <a href="#redeem" className="btn btn-outline" onClick={() => playTone(560)}>
+                  🎁 โค้ดของขวัญฟรี
+                </a>
+              </div>
+              <div className="hero-stats">
+                <div className="stat-card">
+                  <div className="stat-num">60</div>
+                  <div className="stat-label">Resonators ครบทุกตัว</div>
+                </div>
+                <div className="stat-card">
+                  <div className="stat-num">10</div>
+                  <div className="stat-label">สุดยอดทีม Meta Guide</div>
+                </div>
+                <div className="stat-card">
+                  <div className="stat-num">6</div>
+                  <div className="stat-label">ธาตุแห่งการกำทอน</div>
+                </div>
+                <div className="stat-card">
+                  <div className="stat-num">React 18</div>
+                  <div className="stat-label">สถาปัตยกรรมลื่นไหล 60 FPS</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* About Solaris */}
+          <section className="about-section" id="about">
+            <div className="container">
+              <div className="section-title-wrap">
+                <div className="section-subtitle">✦ THE STORY OF SOLARIS-3 ✦</div>
+                <h2 className="section-h2">
+                  มหากาพย์แห่ง <span className="cyan-gradient-text">เสียงคลื่นที่ไม่มีวันสิ้นสุด</span>
+                </h2>
+              </div>
+              <div className="about-grid">
+                <div className="about-card">
+                  <div className="about-icon">🌊</div>
+                  <h3 className="about-card-title">The Lament (วิบัติการณ์)</h3>
+                  <p className="about-card-desc">ภัยพิบัติปริศนาที่นำพาคลื่นสั่นสะเทือนกลืนกินอารยธรรมโบราณ เปลี่ยนสภาพภูมิศาสตร์และก่อกำเนิดมอนสเตอร์กลายพันธุ์ Tacet Discords</p>
+                </div>
+                <div className="about-card">
+                  <div className="about-icon">✦</div>
+                  <h3 className="about-card-title">Resonators (ผู้กำทอน)</h3>
+                  <p className="about-card-desc">มนุษย์ผู้มีพลังพิเศษในการเชื่อมต่อความถี่ทางกายภาพเข้ากับแก่นแท้ของโลก ก่อกำเนิดพลังธาตุทั้ง 6 ปกป้องดินแดน</p>
+                </div>
+                <div className="about-card">
+                  <div className="about-icon">⚔️</div>
+                  <h3 className="about-card-title">Rover (ผู้เดินทาง)</h3>
+                  <p className="about-card-desc">ตัวละครเอกผู้ตื่นขึ้นมาอย่างไร้ความทรงจำ ครอบครองพลัง Tacet Mark พิเศษที่สามารถดูดกลืนพลังเสียงและสลับเปลี่ยนธาตุการกำทอนได้</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Featured Showcase */}
+          <section className="resonators-section" id="resonators">
+            <div className="container">
+              <div className="section-title-wrap">
+                <div className="section-subtitle">✦ FEATURED RESONATORS ✦</div>
+                <h2 className="section-h2">เจาะลึกตัวละครเด่น <span className="gold-text">แห่ง Solaris-3</span></h2>
+              </div>
+
+              <div className="char-tabs-bar">
+                {allResonators.slice(0, 10).map(c => (
+                  <button
+                    key={c.id}
+                    className={`char-tab-item ${c.id === showcaseChar.id ? 'active' : ''}`}
+                    onClick={() => { playTone(540); setShowcaseChar(c); }}
+                  >
+                    <img src={c.thumb} alt={c.name} className="char-tab-thumb" onError={(e) => { e.target.style.opacity = '0.7'; }} />
+                    <span className="char-tab-label">{c.name}</span>
+                  </button>
+                ))}
+              </div>
+
+              <div className="resonator-showcase">
+                <div className="showcase-content">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                    <span className="showcase-element-tag">{showcaseChar.element}</span>
+                    <span style={{ color: 'var(--gold-bright)', letterSpacing: '2px', fontWeight: 'bold' }}>
+                      {showcaseChar.rarity === 5 ? '★★★★★ 5-Star' : '★★★★ 4-Star'}
+                    </span>
+                    <span style={{ color: 'var(--text-dim)', fontSize: '0.85rem' }}>
+                      • v{showcaseChar.version}
+                    </span>
+                  </div>
+                  <h3 className="showcase-title">{showcaseChar.name}</h3>
+                  <div className="showcase-sub">{showcaseChar.nameTh}</div>
+                  <p className="showcase-desc">
+                    ตัวละครธาตุ {showcaseChar.element} สายอาวุธ {showcaseChar.weapon} พร้อมพลังแห่งการกำทอนและชุดคอมโบอันทรงพลังในโลก Solaris-3
+                  </p>
+                  <div style={{ background: 'rgba(6, 182, 212, 0.08)', border: '1px solid rgba(6, 182, 212, 0.25)', borderRadius: '10px', padding: '0.85rem 1rem', marginTop: '1.25rem' }}>
+                    <div style={{ fontSize: '0.8rem', color: 'var(--cyan-wave)', fontWeight: 'bold' }}>
+                      ⚡ ข้อมูลสังกัดและอาวุธ:
+                    </div>
+                    <div style={{ color: 'var(--text-main)', fontSize: '0.95rem', fontWeight: 600, marginTop: '0.25rem' }}>
+                      อาวุธหลัก: {showcaseChar.weapon} • ธาตุ: {showcaseChar.element} (แพตช์ {showcaseChar.version})
+                    </div>
+                  </div>
+                </div>
+
+                <div className="showcase-visual">
+                  <div className="showcase-avatar-wrapper">
+                    <img src={showcaseChar.thumb} alt={showcaseChar.name} className="showcase-portrait-img" onError={(e) => { e.target.style.opacity = '0.7'; }} />
+                  </div>
+                  <div className="showcase-weapon-tag">⚔️ อาวุธประจำตัว: {showcaseChar.weapon}</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Roster Encyclopedia */}
+          <section id="all-resonators" style={{ padding: '6rem 0', background: 'rgba(8, 12, 23, 0.95)' }}>
+            <div className="container">
+              <div className="section-title-wrap">
+                <div className="section-subtitle">✦ COMPLETE RESONATOR ROSTER ✦</div>
+                <h2 className="section-h2">สารานุกรมตัวละครทั้งหมด <span className="cyan-gradient-text">({allResonators.length} Resonators)</span></h2>
+                <p style={{ color: 'var(--text-muted)', maxWidth: '650px', margin: '0.75rem auto 0', fontSize: '0.95rem' }}>
+                  รวบรวมตัวละครทั้งหมดใน Wuthering Waves ครบทุกตัวตั้งแต่เวอร์ชัน 1.0 ถึง 3.6 และตัวละครล่าสุด ครบ {allResonators.length} ตัวละคร
+                </p>
+              </div>
+
+              {/* Filters */}
+              <div className="filter-controls-wrap">
+                <div className="filter-group">
+                  <span className="filter-label">ธาตุ (Element):</span>
+                  {['all', 'Spectro', 'Fusion', 'Electro', 'Aero', 'Glacio', 'Havoc'].map(elem => (
+                    <button
+                      key={elem}
+                      className={`filter-btn ${elemFilter === elem ? 'active' : ''}`}
+                      onClick={() => { playTone(600); setElemFilter(elem); }}
+                    >
+                      {elem === 'all' ? 'ทั้งหมด (All)' : `${elementConfig[elem]?.icon || ''} ${elem}`}
+                    </button>
+                  ))}
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                  <div className="filter-group">
+                    <span className="filter-label">ระดับดาว:</span>
+                    <button className={`filter-btn ${rarityFilter === 'all' ? 'active' : ''}`} onClick={() => { playTone(620); setRarityFilter('all'); }}>ทั้งหมด</button>
+                    <button className={`filter-btn ${rarityFilter === '5' ? 'active' : ''}`} onClick={() => { playTone(620); setRarityFilter('5'); }} style={{ color: 'var(--gold-bright)' }}>★★★★★ 5-Star</button>
+                    <button className={`filter-btn ${rarityFilter === '4' ? 'active' : ''}`} onClick={() => { playTone(620); setRarityFilter('4'); }} style={{ color: '#c084fc' }}>★★★★ 4-Star</button>
+                  </div>
+
+                  <div className="filter-search-wrap">
+                    <input
+                      type="text"
+                      className="filter-search-input"
+                      placeholder="🔍 ค้นหาชื่อตัวละคร / อาวุธ / แพตช์..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ margin: '1.25rem 0', color: 'var(--text-dim)', fontSize: '0.85rem', textAlign: 'right' }}>
+                แสดงผล <strong>{filteredResonators.length}</strong> จากทั้งหมด {allResonators.length} ตัวละคร
+              </div>
+
+              {/* Grid */}
+              <div className="all-roster-grid">
+                {filteredResonators.map(char => {
+                  const conf = elementConfig[char.element] || elementConfig.Spectro;
+                  const starClass = char.rarity === 5 ? 'five-star' : 'four-star';
+                  return (
+                    <div
+                      key={char.id}
+                      className={`roster-card ${starClass}`}
+                      style={{ '--card-element-color': conf.color, '--card-glow': conf.glow }}
+                      onClick={() => handleSelectRosterCard(char)}
+                    >
+                      <span className={`roster-card-version ${char.version === 'TBA' ? 'tba' : ''}`}>
+                        {char.version === 'TBA' ? 'TBA' : `v${char.version}`}
+                      </span>
+                      <div className="roster-card-avatar">
+                        <img src={char.thumb} alt={char.name} loading="lazy" decoding="async" onError={(e) => { e.target.style.opacity = '0.7'; }} />
+                      </div>
+                      <div className="roster-card-name">{char.name}</div>
+                      <div className="roster-card-sub">{char.nameTh}</div>
+                      <div style={{ fontFamily: 'var(--font-tech)', fontSize: '0.7rem', color: char.rarity === 5 ? 'var(--gold-bright)' : '#c084fc', marginBottom: '0.45rem' }}>
+                        {char.rarity === 5 ? '★★★★★' : '★★★★'} • {char.weapon}
+                      </div>
+                      <div className="roster-card-badge" style={{ background: conf.bg, color: conf.color, border: `1px solid ${conf.border}` }}>
+                        {conf.icon} {char.element}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* Meta Teams */}
+          <section id="meta-teams" style={{ padding: '6rem 0', background: 'var(--bg-main)' }}>
+            <div className="container">
+              <div className="section-title-wrap">
+                <div className="section-subtitle">✦ TOWER OF ADVERSITY TIER LIST ✦</div>
+                <h2 className="section-h2">10 อันดับทีมที่เก่งที่สุดในปัจจุบัน <span className="gold-text">(Top 10 Meta Teams)</span></h2>
+              </div>
+
+              <div className="team-filter-tabs">
+                {['all', 'EX', 'S+', 'S'].map(tier => (
+                  <button
+                    key={tier}
+                    className={`team-tab-btn ${teamTier === tier ? 'active' : ''}`}
+                    onClick={() => { playTone(560); setTeamTier(tier); }}
+                  >
+                    {tier === 'all' ? '🏆 ทุกอันดับ (Top 1 - 10)' : `Tier ${tier}`}
+                  </button>
+                ))}
+              </div>
+
+              <div className="meta-teams-list">
+                {filteredTeams.map(team => (
+                  <div key={team.rank} className="meta-team-card">
+                    <div className="meta-team-header">
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                        <div className={`meta-team-rank-badge rank-${team.rank <= 3 ? team.rank : 'other'}`}>
+                          #{team.rank}
+                        </div>
+                        <div>
+                          <div className="meta-team-title">{team.name}</div>
+                          <div className="meta-team-sub">{team.nameTh}</div>
+                        </div>
+                      </div>
+                      <div className={`meta-team-tier-badge tier-${team.tier.toLowerCase().replace('+', '-plus')}`}>
+                        TIER {team.tier}
+                      </div>
+                    </div>
+
+                    <div style={{ margin: '1rem 0 0.5rem', color: 'var(--cyan-wave)', fontSize: '0.9rem', fontWeight: 600 }}>
+                      ✦ {team.highlight}
+                    </div>
+
+                    <div className="meta-team-tags">
+                      {team.tags.map((t, i) => <span key={i} className="meta-tag">{t}</span>)}
+                    </div>
+
+                    <div className="meta-team-members-grid">
+                      {team.members.map((m, i) => (
+                        <div key={i} className="meta-member-item">
+                          <div className="meta-member-avatar">
+                            <img src={m.thumb} alt={m.name} onError={(e) => { e.target.style.opacity = '0.7'; }} />
+                            <span className="meta-member-role">{m.role}</span>
+                          </div>
+                          <div className="meta-member-name">{m.name}</div>
+                          <div className="meta-member-elem">{m.element} • {m.weapon}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="meta-synergy-box">
+                      <div className="meta-synergy-title">⚡ จุดเด่นและ Synergy:</div>
+                      <p className="meta-synergy-text">{team.synergy}</p>
+                    </div>
+
+                    <div className="meta-rotation-box">
+                      <div className="meta-rotation-title">🔄 ลำดับคอมโบ & สลับตัว (Rotation 1-2-3):</div>
+                      <div className="meta-rotation-steps">
+                        {team.rotation.map(r => (
+                          <div key={r.step} className="rotation-step-card">
+                            <div className="step-num-badge">STEP {r.step}</div>
+                            <div className="step-char-name">{r.char}</div>
+                            <div className="step-desc-text">{r.desc}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Features */}
+          <section className="features-section" id="features">
+            <div className="container">
+              <div className="section-title-wrap">
+                <div className="section-subtitle">✦ CORE GAMEPLAY ✦</div>
+                <h2 className="section-h2">ระบบเกม & <span className="cyan-gradient-text">Echo System</span></h2>
+              </div>
+              <div className="features-grid">
+                <div className="feature-card">
+                  <div className="feature-icon">🔮</div>
+                  <h3 className="feature-card-title">Echo Absorption</h3>
+                  <p className="feature-card-desc">กำจัดศัตรูในโลกกว้างเพื่อจับร่างสะท้อนมาติดตั้ง แปลงร่างเป็นบอสใช้สกิลได้ทันที</p>
+                </div>
+                <div className="feature-card">
+                  <div className="feature-icon">🔄</div>
+                  <h3 className="feature-card-title">Concerto System</h3>
+                  <p className="feature-card-desc">สะสมเกจ Concerto จากการต่อสู้เพื่อทริกเกอร์ Intro/Outro Skills บัฟส่งต่อพลังมหาศาล</p>
+                </div>
+                <div className="feature-card">
+                  <div className="feature-icon">⚡</div>
+                  <h3 className="feature-card-title">Parry & Counter</h3>
+                  <p className="feature-card-desc">สวนกลับวงแหวนทองของบอส และหลบหลีกในเสี้ยววินาทีเพื่อเปิดหน้าต่างสโลว์โมชัน</p>
+                </div>
+                <div className="feature-card">
+                  <div className="feature-icon">🌌</div>
+                  <h3 className="feature-card-title">Tactical Hologram</h3>
+                  <p className="feature-card-desc">ท้าทายบอสโฮโลแกรมที่มีเมคานิกส์สังหารครั้งเดียว ทดสอบทักษะและความแม่นยำ</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Redeem */}
+          <section className="redeem-section" id="redeem">
+            <div className="container">
+              <div className="section-title-wrap">
+                <div className="section-subtitle">✦ FREE REWARDS ✦</div>
+                <h2 className="section-h2">โค้ดของขวัญ & รางวัลฟรี <span className="gold-text">(Redeem Codes)</span></h2>
+              </div>
+              <div className="redeem-grid">
+                {redeemCodes.map((item, idx) => (
+                  <div key={idx} className="redeem-card">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                      <span className="redeem-status-tag">{item.status}</span>
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>{item.expiry}</span>
+                    </div>
+                    <div className="redeem-code-val">{item.code}</div>
+                    <div className="redeem-rewards-text">🎁 รางวัล: {item.rewards}</div>
+                    <button className="btn btn-outline" style={{ width: '100%', marginTop: '1rem', padding: '0.65rem' }} onClick={() => copyCode(item.code)}>
+                      คัดลอกโค้ดแลกรับ
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer className="footer">
+            <div className="container footer-inner">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+                <div className="logo-emblem">✦</div>
+                <div>
+                  <div style={{ fontWeight: 800, color: 'var(--text-main)', letterSpacing: '1px' }}>WUTHERING WAVES • REACT EDITION</div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>ฐานข้อมูลและสารานุกรม 60 Resonators & เมต้าไกด์</div>
+                </div>
+              </div>
+              <div style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-dim)' }}>
+                Wuthering Waves และรูปภาพเนื้อหาทั้งหมดเป็นลิขสิทธิ์ของ <strong>KURO GAMES</strong>
+              </div>
+              <button className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                ↑ กลับขึ้นด้านบน
+              </button>
+            </div>
+          </footer>
+
+          {/* Sci-Fi Toast */}
+          <div className={`sci-toast-container ${toast ? 'show' : ''}`}>
+            <div className="sci-toast-icon">✦</div>
+            <div className="sci-toast-body">
+              <div className="sci-toast-title">SOLARIS-3 NOTICE</div>
+              <div className="sci-toast-message">{toast}</div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // Render to Root
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
